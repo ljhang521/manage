@@ -34,7 +34,8 @@ public class UserController {
     public CommonReturnType jsonTest(){
          User user = userService.selectUser(1);
          List l=new ArrayList();
-
+        l.add(user);
+        l.add(user);
         l.add(user);
         return CommonReturnType.create(l);
     }
