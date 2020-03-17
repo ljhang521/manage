@@ -18,7 +18,7 @@
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-         <!-- 生成映射文件的包名和位置 放在resource文件夹下-->
+        <!-- 生成映射文件的包名和位置 放在resource文件夹下-->
         <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
@@ -27,12 +27,21 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->
-        <table tableName="user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-                                                     enableUpdateByExample="false"/>
-        <!--table tableName="project" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/-->
-        <table tableName="message" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <!--table tableName="progress" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/-->
+        <!--<table tableName="user" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="progress" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="work_place" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="group_ex" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="group_user" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="report" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
     </context>
 </generatorConfiguration>
