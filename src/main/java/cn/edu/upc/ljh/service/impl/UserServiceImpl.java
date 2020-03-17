@@ -1,19 +1,19 @@
 package cn.edu.upc.ljh.service.impl;
 
-import cn.edu.upc.ljh.dao.IUserDao;
+import cn.edu.upc.ljh.dao.UserMapper;
 import cn.edu.upc.ljh.model.User;
-import cn.edu.upc.ljh.service.IUserService;
+import cn.edu.upc.ljh.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service("userService")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Resource
-    private IUserDao userDao;
+    private UserMapper userDao;
 
-    public User selectUser(long userId) {
-        return userDao.selectUser(userId);
+    public User selectUser(int userId) {
+        return userDao.selectByPrimaryKey(userId);
     }
 }
