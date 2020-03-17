@@ -19,6 +19,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/json4")
+    @ResponseBody
+    public CommonReturnType jsonTest4(){
+        User user = userService.selectUser(1);
+        List l=new ArrayList();
+        l.add(user);
+
+        return CommonReturnType.create(l);
+    }
 
     @RequestMapping("/json")
     @ResponseBody
