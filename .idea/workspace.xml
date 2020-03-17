@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e4c5c6d-abea-4177-b80f-544b4b92dfc9" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="4e4c5c6d-abea-4177-b80f-544b4b92dfc9" name="Default Changelist" comment="Default Changelist" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +47,8 @@
       <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+            <state relative-caret-position="236">
+              <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -274,6 +271,11 @@
           <item name="manage Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
           <item name="resources" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="manage Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
       </expand>
       <select />
@@ -639,11 +641,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584444462392</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Default Changelist">
+      <created>1584450109984</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584450109984</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168279000" />
+    <option name="totallyTimeSpent" value="170091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -656,12 +665,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.21767594" />
       <window_info anchor="bottom" id="Application Servers" order="6" sideWeight="0.49924356" weight="0.32569557" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Maven Projects" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="2" />
@@ -678,7 +686,7 @@
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.683056" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76928896" weight="0.32166892" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32843137" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32561985" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32561985" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24205749" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1070,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="236">
+          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
         </state>
       </provider>
     </entry>
