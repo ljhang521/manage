@@ -7,9 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e4c5c6d-abea-4177-b80f-544b4b92dfc9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/manage.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/manage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/manage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,9 +65,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="ed066bfd-c32e-470c-9dcd-5aa16fa4ae82" />
-  </component>
   <component name="JavaeeView">
     <option name="showModules" value="false" />
   </component>
@@ -88,14 +87,15 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="181" />
-    <option name="y" value="93" />
-    <option name="width" value="1024" />
-    <option name="height" value="649" />
-  </component>
+  <component name="ProjectId" id="1ZG1ngQVFmHTXt4ZRJ0YNBgbT0Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -122,7 +122,7 @@
       <recent name="D:\springboot\manage\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.20">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.52">
     <configuration name="manage [mybatis-generator:generate]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -148,7 +148,7 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 9.0.20" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.20" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 8.0.52" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.52" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:9080/test" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -298,7 +298,7 @@
     </configuration>
     <list>
       <item itemvalue="Maven.manage [mybatis-generator:generate]" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.20" />
+      <item itemvalue="Tomcat Server.Tomcat 8.0.52" />
     </list>
     <recent_temporary>
       <list>
@@ -348,6 +348,7 @@
       <workItem from="1583999690082" duration="15634000" />
       <workItem from="1584234948573" duration="18021000" />
       <workItem from="1584350192041" duration="9886000" />
+      <workItem from="1584450786180" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="improvement plan">
       <created>1583452017583</created>
@@ -391,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584446925296</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="wenghaonan update 1">
+      <created>1584449900063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584449900063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -408,7 +416,74 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="improvement plan" />
-    <option name="LAST_COMMIT_MESSAGE" value="improvement plan" />
+    <MESSAGE value="wenghaonan update 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="wenghaonan update 1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="73" key="#Notifications" timestamp="1584449956910">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="73" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1584449956910" />
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584450107775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584450107775" />
+    <state x="385" y="6" key="CommitChangelistDialog2" timestamp="1584449964892">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="385" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584449964892" />
+    <state width="500" height="140" key="GridCell.Tab.0.bottom" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.0.center" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.0.left" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.0.right" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.1.bottom" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.1.center" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.1.left" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.1.right" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.2.bottom" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.2.center" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.2.left" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state width="500" height="140" key="GridCell.Tab.2.right" timestamp="1584450758591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="500" height="140" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584450758591" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1584449994492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584449994492" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
