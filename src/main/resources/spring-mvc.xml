@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
     <!-- 扫描注解，这样com.xjt包下的文件都能被扫描 -->
-    <context:component-scan base-package="cn.edu.upc.ljh"/>
+    <context:component-scan base-package="cn.edu.upc"/>
 
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
