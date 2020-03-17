@@ -1,8 +1,6 @@
 package cn.edu.upc.ljh.service;
 
-import cn.edu.upc.ljh.model.User;
-
-import java.util.List;
+import cn.edu.upc.manage.model.User;
 
 public interface UserService {
 

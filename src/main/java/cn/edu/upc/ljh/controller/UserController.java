@@ -1,7 +1,7 @@
 package cn.edu.upc.ljh.controller;
 
-import cn.edu.upc.ljh.common.CommonReturnType;
-import cn.edu.upc.ljh.model.User;
+import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.User;
 import cn.edu.upc.ljh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import javax.servlet.http.HttpServletRequest;

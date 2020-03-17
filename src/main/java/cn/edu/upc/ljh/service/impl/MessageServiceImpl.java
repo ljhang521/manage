@@ -1,7 +1,7 @@
 package cn.edu.upc.ljh.service.impl;
 
-import cn.edu.upc.ljh.dao.MessageMapper;
-import cn.edu.upc.ljh.model.Message;
+import cn.edu.upc.manage.dao.MessageMapper;
+import cn.edu.upc.manage.model.Message;
 import cn.edu.upc.ljh.service.MessageService;
 import org.springframework.stereotype.Service;
 

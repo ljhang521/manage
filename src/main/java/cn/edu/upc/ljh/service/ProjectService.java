@@ -1,6 +1,6 @@
 package cn.edu.upc.ljh.service;
 
-import cn.edu.upc.ljh.model.Project;
+import cn.edu.upc.manage.model.Project;
 
 import java.util.List;
 

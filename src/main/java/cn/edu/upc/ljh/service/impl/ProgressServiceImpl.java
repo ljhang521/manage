@@ -1,7 +1,7 @@
 package cn.edu.upc.ljh.service.impl;
 
-import cn.edu.upc.ljh.dao.ProgressMapper;
-import cn.edu.upc.ljh.model.Progress;
+import cn.edu.upc.manage.dao.ProgressMapper;
+import cn.edu.upc.manage.model.Progress;
 import cn.edu.upc.ljh.service.ProgressService;
 import org.springframework.stereotype.Service;
 

@@ -1,15 +1,12 @@
 package cn.edu.upc.ljh.controller;
 
-import cn.edu.upc.ljh.common.CommonReturnType;
-import cn.edu.upc.ljh.model.Progress;
-import cn.edu.upc.ljh.model.Project;
+import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.Progress;
 import cn.edu.upc.ljh.service.ProgressService;
-import cn.edu.upc.ljh.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin

@@ -14,7 +14,7 @@
                         password="upc2020">
         </jdbcConnection>
         <!-- 实体类生成的位置 -->
-        <javaModelGenerator targetPackage="cn.edu.upc.ljh.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="cn.edu.upc.manage.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -23,7 +23,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.upc.ljh.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.upc.manage.dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->

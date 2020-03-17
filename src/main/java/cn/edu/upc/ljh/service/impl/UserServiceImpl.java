@@ -1,7 +1,7 @@
 package cn.edu.upc.ljh.service.impl;
 
-import cn.edu.upc.ljh.dao.UserMapper;
-import cn.edu.upc.ljh.model.User;
+import cn.edu.upc.manage.dao.UserMapper;
+import cn.edu.upc.manage.model.User;
 import cn.edu.upc.ljh.service.UserService;
 import org.springframework.stereotype.Service;
 

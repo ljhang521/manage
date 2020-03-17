@@ -1,6 +1,6 @@
 package cn.edu.upc.ljh.service;
 
-import cn.edu.upc.ljh.model.Progress;
+import cn.edu.upc.manage.model.Progress;
 
 import java.util.List;
 

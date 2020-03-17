@@ -1,4 +1,4 @@
-package cn.edu.upc.ljh.model;
+package cn.edu.upc.manage.model;
 
 public class User {
     /**

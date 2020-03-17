@@ -1,7 +1,7 @@
 package cn.edu.upc.ljh.service.impl;
 
-import cn.edu.upc.ljh.dao.ProjectMapper;
-import cn.edu.upc.ljh.model.Project;
+import cn.edu.upc.manage.dao.ProjectMapper;
+import cn.edu.upc.manage.model.Project;
 import cn.edu.upc.ljh.service.ProjectService;
 import org.springframework.stereotype.Service;
 

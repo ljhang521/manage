@@ -1,9 +1,7 @@
 package cn.edu.upc.ljh.controller;
 
-import cn.edu.upc.ljh.common.CommonReturnType;
-import cn.edu.upc.ljh.model.Progress;
-import cn.edu.upc.ljh.model.Project;
-import cn.edu.upc.ljh.model.User;
+import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.Project;
 import cn.edu.upc.ljh.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

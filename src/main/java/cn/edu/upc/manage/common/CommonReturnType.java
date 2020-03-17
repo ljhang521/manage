@@ -1,4 +1,4 @@
-package cn.edu.upc.ljh.common;
+package cn.edu.upc.manage.common;
 
 /**
  * @author zcc
