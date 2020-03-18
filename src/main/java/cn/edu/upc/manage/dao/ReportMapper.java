@@ -1,6 +1,9 @@
 package cn.edu.upc.manage.dao;
 
 import cn.edu.upc.manage.model.Report;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface ReportMapper {
     /**
@@ -50,4 +53,5 @@ public interface ReportMapper {
      * @mbg.generated Tue Mar 17 22:10:51 CST 2020
      */
     int updateByPrimaryKey(Report record);
+    List<Report> selectReportListByParam(@Param("pid") int pid, @Param("gid") int gid, @Param("eid") int eid);
 }
