@@ -43,5 +43,10 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <table tableName="area" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
+        <!--<table tableName="report" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="view_tasks" enableCountByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" enableUpdateByExample="false"/>
+
     </context>
 </generatorConfiguration>
