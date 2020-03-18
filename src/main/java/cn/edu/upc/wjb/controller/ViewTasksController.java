@@ -18,7 +18,7 @@ public class ViewTasksController {
     @Autowired
     ViewTasksService viewTasksService;
 
-    @RequestMapping("/getProjectEmployeeRoleList")
+    @RequestMapping("/getProjectEmployeeRoleList123")
     @ResponseBody
     public CommonReturnType getTasksList(){
 
