@@ -2,6 +2,7 @@ package cn.edu.upc.zy.service.impl;
 
 import cn.edu.upc.manage.dao.MessageMapper;
 import cn.edu.upc.manage.model.Message;
+import cn.edu.upc.zy.service.MessageService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

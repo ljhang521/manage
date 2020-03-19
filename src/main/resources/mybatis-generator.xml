@@ -27,8 +27,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->
-        <!--<table tableName="user" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="view_message_state" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>
         <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
