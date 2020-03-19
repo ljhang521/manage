@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2020/3/18
  */
 
-public interface ProjectService2 {
+public interface ProjectServiceGSL {
 
     /**
      * 根据项目名称返回对应的项目

@@ -1,7 +1,7 @@
 package cn.edu.upc.gsl.controller;
 
 
-import cn.edu.upc.gsl.service.ProjectService2;
+import cn.edu.upc.gsl.service.ProjectServiceGSL;
 import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.manage.model.Project;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +20,10 @@ import java.util.List;
 @CrossOrigin
 @Controller
 @RequestMapping(value = "/project2", method = {RequestMethod.POST, RequestMethod.GET})
-public class ProjectController2 {
+public class ProjectControllerGSL {
 
     @Autowired
-    private ProjectService2 projectService;
+    private ProjectServiceGSL projectService;
 
 
     @RequestMapping("/projectList")

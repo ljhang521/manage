@@ -1,6 +1,6 @@
 package cn.edu.upc.dzw.service.impl;
 
-import cn.edu.upc.dzw.service.ProjectService;
+import cn.edu.upc.dzw.service.ProjectServiceDZW;
 import cn.edu.upc.manage.dao.*;
 import cn.edu.upc.manage.model.*;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2020/3/12
  */
 @Service("projectService1")
-public class ProjectServiceImpl implements ProjectService {
+public class ProjectServiceDZWImpl implements ProjectServiceDZW {
 
     @Resource
     private ProjectMapper projectMapper;

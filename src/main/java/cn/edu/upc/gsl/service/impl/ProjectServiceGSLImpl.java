@@ -1,6 +1,6 @@
 package cn.edu.upc.gsl.service.impl;
 
-import cn.edu.upc.gsl.service.ProjectService2;
+import cn.edu.upc.gsl.service.ProjectServiceGSL;
 import cn.edu.upc.manage.dao.ProjectMapper;
 import cn.edu.upc.manage.dao.UserMapper;
 import cn.edu.upc.manage.dao.WorkPlaceMapper;
@@ -17,7 +17,7 @@ import java.util.List;
  * @date
  */
 @Service("projectService2")
-public class ProjectServiceImpl implements ProjectService2 {
+public class ProjectServiceGSLImpl implements ProjectServiceGSL {
 
 
     @Resource
