@@ -5,6 +5,10 @@ import cn.edu.upc.manage.model.Progress;
 import java.util.List;
 
 public interface ProgressMapper {
+    List<Progress> selectProgress(Progress projectId);
+    List<Progress> selectByPrimaryKey();
+    Progress updateDelete(Integer id);
+    int updateByPrimaryKeySelect(Progress change);
     /**
      * 选取某项目下所有小组
      *
