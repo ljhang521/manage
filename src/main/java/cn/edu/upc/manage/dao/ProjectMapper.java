@@ -1,10 +1,13 @@
 package cn.edu.upc.manage.dao;
 
 import cn.edu.upc.manage.model.Project;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface ProjectMapper {
+
+    List<Project> selectByProjectName(@Param("projectName") String  projectName);
     /**
      * 获取全部项目
      *
