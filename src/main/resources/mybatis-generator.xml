@@ -30,22 +30,6 @@
 
         <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="progress" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="work_place" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="group_ex" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="group_user" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-<!--        <table tableName="area" enableCountByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" enableUpdateByExample="false"/>-->
-<!--        <table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
-<!--               enableUpdateByExample="false"/>-->
-<!--        <table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
-<!--               enableUpdateByExample="false"/>-->
 
     </context>
 </generatorConfiguration>
