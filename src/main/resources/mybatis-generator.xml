@@ -27,8 +27,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->
-        <table tableName="view_message_state" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
+
         <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
@@ -41,11 +40,6 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="group_user" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-<<<<<<< HEAD
-        <table tableName="manage" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-=======
-
 <!--        <table tableName="area" enableCountByExample="false" enableDeleteByExample="false"-->
 <!--               enableSelectByExample="false" enableUpdateByExample="false"/>-->
 <!--        <table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
@@ -53,8 +47,5 @@
 <!--        <table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
 
-
-
->>>>>>> 2e3fefa1031c6eba089e9c1f7f056da80a7492a4
     </context>
 </generatorConfiguration>
