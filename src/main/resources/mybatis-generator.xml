@@ -52,7 +52,8 @@
 <!--               enableUpdateByExample="false"/>-->
 <!--        <table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
-
+<!--       <table tableName="technology" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--                     enableUpdateByExample="false"/>-->
 
 
 >>>>>>> 2e3fefa1031c6eba089e9c1f7f056da80a7492a4
