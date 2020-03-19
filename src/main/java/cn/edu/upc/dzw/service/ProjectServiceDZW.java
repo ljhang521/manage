@@ -10,7 +10,7 @@ import java.util.List;
  * @author zhenwei
  * @date 2020/3/12
  */
-public interface ProjectService {
+public interface ProjectServiceDZW {
 
     /**
      * 获取全部项目
