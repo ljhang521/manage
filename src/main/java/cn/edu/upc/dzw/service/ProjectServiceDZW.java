@@ -3,6 +3,7 @@ package cn.edu.upc.dzw.service;
 import cn.edu.upc.manage.model.Project;
 import cn.edu.upc.manage.model.ProjectDetail;
 import cn.edu.upc.manage.model.ProjectNew;
+import cn.edu.upc.manage.model.ViewProject;
 
 import java.util.List;
 
@@ -28,6 +29,15 @@ public interface ProjectServiceDZW {
     List<ProjectNew> getProjectListNew();
 
     /**
+     * 获取全部项目
+     * 加索引对应值
+     * 视图
+     *
+     * @return
+     */
+    List<ViewProject> getViewProjectList();
+
+    /**
      * 新增项目
      *
      * @param project
@@ -45,11 +55,22 @@ public interface ProjectServiceDZW {
 
     /**
      * 获取某个项目信息
+     * 加索引对应值
      *
      * @param id
      * @return
      */
     ProjectNew getProjectNew(Integer id);
+
+    /**
+     * 获取某个项目信息
+     * 加索引对应值
+     * 视图
+     *
+     * @param id
+     * @return
+     */
+    ViewProject getViewProject(Integer id);
 
     /**
      * 修改项目信息

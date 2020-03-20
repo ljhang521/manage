@@ -29,6 +29,8 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     private GroupExMapper groupExMapper;
     @Resource
     private GroupUserMapper groupUserMapper;
+    @Resource
+    private ViewProjectMapper viewProjectMapper;
 
     @Override
     public List<Project> getProjectList() {
@@ -76,6 +78,11 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     }
 
     @Override
+    public List<ViewProject> getViewProjectList() {
+        return viewProjectMapper.getViewProjectList();
+    }
+
+    @Override
     public int addProject(Project project) {
         Date date = new Date();
         project.setCreateTime(date);
@@ -94,6 +101,11 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     @Override
     public ProjectNew getProjectNew(Integer id) {
         return ProjectToProjectNew(projectMapper.selectByPrimaryKey(id));
+    }
+
+    @Override
+    public ViewProject getViewProject(Integer id) {
+        return viewProjectMapper.selectByPrimaryKey(id);
     }
 
     @Override
