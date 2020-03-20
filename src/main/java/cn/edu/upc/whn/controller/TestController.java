@@ -18,4 +18,11 @@ public class TestController {
     public CommonReturnType getList(@RequestParam("id") Integer id){
         return CommonReturnType.create(testService.getMessageList(id));
     }
+
+    @RequestMapping("/updateReader")
+    @ResponseBody
+    public CommonReturnType updateReader(@RequestParam("id") int id,@RequestParam("uid") int uid){
+        testService.updateReader(id,uid);
+        return CommonReturnType.create(null);
+    }
 }
