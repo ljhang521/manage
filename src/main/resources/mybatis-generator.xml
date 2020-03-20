@@ -27,22 +27,9 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->
-        <!--<table tableName="user" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+
         <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="progress" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="work_place" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="group_ex" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <!--<table tableName="group_user" enableCountByExample="false" enableDeleteByExample="false"-->
-               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
-        <table tableName="message" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
 
     </context>
 </generatorConfiguration>
