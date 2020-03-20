@@ -7,7 +7,8 @@ import java.util.List;
 public interface ProgressMapper {
     List<Progress> selectProgress(Progress projectId);
     List<Progress> selectByPrimaryKey();
-    Progress updateDelete(Integer id);
+    int  updateDelete(Progress delete);
+
     int updateByPrimaryKeySelect(Progress change);
     /**
      * 选取某项目下所有小组

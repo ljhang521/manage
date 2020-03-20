@@ -11,5 +11,5 @@ public interface ProgressServiceXJS {
        void insertProgress(Progress progress);
          int updateDel(Progress change);
          List<Progress> select();
-         Progress updateDelete(Integer id);
+         int updateDelete(Progress delete);
 }

@@ -235,8 +235,8 @@
      and del_flag=0
 
   </select>
-  <update  id="updateDelete" parameterType="java.lang.Integer">
-       update progress set del_flag = #{id}
+  <update  id="updateDelete" parameterType="cn.edu.upc.manage.model.Progress">
+       update progress set del_flag = #{id,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectProgress" resultMap="BaseResultMap">

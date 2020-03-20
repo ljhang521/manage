@@ -14,6 +14,7 @@ public class GroupExServiceImplXJ implements GroupExServiceXJ {
     private GroupExMapper GroupExmapper;
     @Override
     public void insertGroupEx(GroupEx groupEx){
+        groupEx.setGroupName("null");
         GroupExmapper.insertSelective(groupEx);
     }
     public void changeGroupEx(GroupEx changeName) {

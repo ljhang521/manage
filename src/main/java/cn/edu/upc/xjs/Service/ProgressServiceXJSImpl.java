@@ -40,8 +40,8 @@ public class ProgressServiceXJSImpl implements ProgressServiceXJS {
     @Autowired
     private ProgressMapper deleteMapper;
      @Override
-    public Progress updateDelete(Integer id){
+    public int updateDelete(Progress delete){
 
-         return deleteMapper.updateDelete(id);
+         return deleteMapper.updateDelete(delete);
      }
 }

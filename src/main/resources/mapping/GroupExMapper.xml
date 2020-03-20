@@ -202,4 +202,9 @@
         where del_flag = 0
         and project_id = #{projectId,jdbcType=INTEGER}
     </select>
+    <update  id="updateDel" parameterType="cn.edu.upc.manage.model.GroupEx">
+    update group_ex
+    set del_flag = #{id,jdbcType=INTEGER}
+     where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

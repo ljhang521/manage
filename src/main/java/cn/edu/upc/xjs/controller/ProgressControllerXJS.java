@@ -42,10 +42,11 @@ public class ProgressControllerXJS {
     }
     @RequestMapping("/deleteProgress")
     @ResponseBody
-    public  CommonReturnType deleteProgress(@RequestBody Integer id){
-        progressService.updateDelete(id);
+    public  CommonReturnType deleteProgress(@RequestBody Progress delete){
+        progressService.updateDelete(delete);
+        List<Progress>  list = progressService.select();
 
-        return CommonReturnType.create(null);
+        return CommonReturnType.create(list);
 
     }
 }
