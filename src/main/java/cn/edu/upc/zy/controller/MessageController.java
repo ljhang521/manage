@@ -1,17 +1,29 @@
 package cn.edu.upc.zy.controller;
 
-import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.whn.service.TestService;
+import cn.edu.upc.zy.service.MessageService;
+import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @Controller
-@RequestMapping(value = "/test9",method = RequestMethod.POST)
-@CrossOrigin(allowCredentials = "true",allowedHeaders = "*")
-public class TestControllerZY {
+@RequestMapping(value="/message",method={RequestMethod.POST, RequestMethod.GET})
+
+public class MessageController {
+    @Autowired
+   private MessageService messageService;
     @Autowired
     TestService testService;
+
+    @RequestMapping("/insertNewMessage")
+    @ResponseBody
+    public CommonReturnType insertNewMessage(@RequestBody Message message){
+        messageService.insertMessage(message);
+        return CommonReturnType.create(null);
+    }
     @RequestMapping("/getList")
     @ResponseBody
     public CommonReturnType getList(@RequestParam("id") Integer id){
@@ -23,5 +35,4 @@ public class TestControllerZY {
         testService.updateReader(id,uid);
         return CommonReturnType.create(null);
     }
-
 }
