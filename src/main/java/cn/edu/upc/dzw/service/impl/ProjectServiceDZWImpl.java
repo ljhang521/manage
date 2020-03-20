@@ -3,6 +3,7 @@ package cn.edu.upc.dzw.service.impl;
 import cn.edu.upc.dzw.service.ProjectServiceDZW;
 import cn.edu.upc.manage.dao.*;
 import cn.edu.upc.manage.model.*;
+import javafx.geometry.VPos;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -31,6 +32,8 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     private GroupUserMapper groupUserMapper;
     @Resource
     private ViewProjectMapper viewProjectMapper;
+    @Resource
+    private ViewGroupUserMapper viewGroupUserMapper;
 
     @Override
     public List<Project> getProjectList() {
@@ -131,52 +134,54 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     public ProjectDetail getProjectDetail(Integer id) {
         ProjectDetail projectDetail = new ProjectDetail();
 
-        Project project = projectMapper.selectByPrimaryKey(id);
-        ProjectNew projectNew = ProjectToProjectNew(project);
+//        Project project = projectMapper.selectByPrimaryKey(id);
+//        ProjectNew projectNew = ProjectToProjectNew(project);
+        ViewProject project = viewProjectMapper.selectByPrimaryKey(id);
 
         List<Progress> progressList = progressMapper.selectProgressList(id);
 
-        List<GroupExNew> groupExNewList = new ArrayList<>();
-        List<GroupEx> groupExList = groupExMapper.selectGroup(id);
-        for (int i = 0; i < groupExList.size(); i++) {
-            GroupExNew groupExNew = new GroupExNew();
-
-            groupExNew.setId(groupExList.get(i).getId());
-            groupExNew.setProjectId(groupExList.get(i).getProjectId());
-            groupExNew.setGroupName(groupExList.get(i).getGroupName());
-
-            List<GroupUser> groupUserList = new ArrayList<>();
-            List<GroupUserNew> groupUserNewList = new ArrayList<>();
-            if (groupExList.get(i).getId() != null) {
-                groupUserList = groupUserMapper.selectGroupUser(groupExList.get(i).getId());
-            }
-            for (int j = 0; j < groupUserList.size(); j++) {
-                GroupUserNew groupUserNew = new GroupUserNew();
-                groupUserNew.setId(groupUserList.get(j).getId());
-                groupUserNew.setGroupId(groupUserList.get(j).getGroupId());
-                groupUserNew.setUserId(groupUserList.get(j).getUserId());
-                if (groupUserList.get(j).getUserId() != null && userMapper.selectByPrimaryKey(groupUserList.get(j).getUserId()) != null) {
-                    groupUserNew.setUserName(userMapper.selectByPrimaryKey(groupUserList.get(j).getUserId()).getRealName());
-                } else {
-                    groupUserNew.setUserName("");
-                }
-                groupUserNew.setUserType(groupUserList.get(j).getUserType());
-                groupUserNew.setContent(groupUserList.get(j).getContent());
-                groupUserNew.setDelFlag(groupUserList.get(j).getDelFlag());
-                groupUserNew.setOperator(groupUserList.get(j).getOperator());
-                groupUserNew.setOperatorIp(groupUserList.get(j).getOperatorIp());
-                groupUserNew.setOperatorTime(groupUserList.get(j).getOperatorTime());
-
-                groupUserNewList.add(groupUserNew);
-            }
-            groupExNew.setMemberList(groupUserNewList);
-
-            groupExNewList.add(groupExNew);
-        }
+//        List<GroupExNew> groupExNewList = new ArrayList<>();
+//        List<GroupEx> groupExList = groupExMapper.selectGroup(id);
+//        for (int i = 0; i < groupExList.size(); i++) {
+//            GroupExNew groupExNew = new GroupExNew();
+//
+//            groupExNew.setId(groupExList.get(i).getId());
+//            groupExNew.setProjectId(groupExList.get(i).getProjectId());
+//            groupExNew.setGroupName(groupExList.get(i).getGroupName());
+//
+//            List<GroupUser> groupUserList = new ArrayList<>();
+//            List<GroupUserNew> groupUserNewList = new ArrayList<>();
+//            if (groupExList.get(i).getId() != null) {
+//                groupUserList = groupUserMapper.selectGroupUser(groupExList.get(i).getId());
+//            }
+//            for (int j = 0; j < groupUserList.size(); j++) {
+//                GroupUserNew groupUserNew = new GroupUserNew();
+//                groupUserNew.setId(groupUserList.get(j).getId());
+//                groupUserNew.setGroupId(groupUserList.get(j).getGroupId());
+//                groupUserNew.setUserId(groupUserList.get(j).getUserId());
+//                if (groupUserList.get(j).getUserId() != null && userMapper.selectByPrimaryKey(groupUserList.get(j).getUserId()) != null) {
+//                    groupUserNew.setUserName(userMapper.selectByPrimaryKey(groupUserList.get(j).getUserId()).getRealName());
+//                } else {
+//                    groupUserNew.setUserName("");
+//                }
+//                groupUserNew.setUserType(groupUserList.get(j).getUserType());
+//                groupUserNew.setContent(groupUserList.get(j).getContent());
+//                groupUserNew.setDelFlag(groupUserList.get(j).getDelFlag());
+//                groupUserNew.setOperator(groupUserList.get(j).getOperator());
+//                groupUserNew.setOperatorIp(groupUserList.get(j).getOperatorIp());
+//                groupUserNew.setOperatorTime(groupUserList.get(j).getOperatorTime());
+//
+//                groupUserNewList.add(groupUserNew);
+//            }
+//            groupExNew.setMemberList(groupUserNewList);
+//
+//            groupExNewList.add(groupExNew);
+//        }
+        List<ViewGroupUser> groupUserList = viewGroupUserMapper.selectByPrimaryKey(id);
 
         projectDetail.setProgressList(progressList);
-        projectDetail.setProjectInfo(projectNew);
-        projectDetail.setGroupList(groupExNewList);
+        projectDetail.setProjectInfo(project);
+        projectDetail.setGroupList(groupUserList);
         return projectDetail;
     }
 
