@@ -14,14 +14,15 @@ import java.util.List;
 
 @CrossOrigin
 @Controller
-@RequestMapping(value="/project",method = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping(value = "/project", method = {RequestMethod.POST, RequestMethod.GET})
 public class ProjectControllerXJS {
     @Autowired
     private ProjectServiceXJS projectServiceXJS;
+
     @RequestMapping("/getProjectList")
     @ResponseBody
-    public CommonReturnType getProjectList(){
-        List<String> list= projectServiceXJS.getProjectName();
+    public CommonReturnType getProjectList() {
+        List<String> list = projectServiceXJS.getProjectName();
         return CommonReturnType.create(list);
     }
 

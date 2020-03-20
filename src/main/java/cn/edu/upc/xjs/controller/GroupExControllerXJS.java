@@ -11,31 +11,33 @@ import java.util.List;
 
 @CrossOrigin
 @Controller
-@RequestMapping(value="/project",method = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping(value = "/project", method = {RequestMethod.POST, RequestMethod.GET})
 public class GroupExControllerXJS {
     @Autowired
     private GroupExServiceXJS groupExServiceXJS;
+
     @RequestMapping("/addGroup")
     @ResponseBody
-    public CommonReturnType addGroupEx (@RequestBody GroupEx groupEx){
+    public CommonReturnType addGroupEx(@RequestBody GroupEx groupEx) {
         groupExServiceXJS.insertGroupEx(groupEx);
         List<GroupEx> list = groupExServiceXJS.selectGroupEx();
         return CommonReturnType.create(list);
     }
+
     @RequestMapping("/changeGroupName")
     @ResponseBody
-    public CommonReturnType changeGroupName(@RequestBody GroupEx changeName){
-         groupExServiceXJS.changeGroupEx(changeName);
+    public CommonReturnType changeGroupName(@RequestBody GroupEx changeName) {
+        groupExServiceXJS.changeGroupEx(changeName);
         List<GroupEx> list = groupExServiceXJS.selectGroupEx();
-         return CommonReturnType.create(list);
+        return CommonReturnType.create(list);
     }
+
     @RequestMapping("/deleteGroup")
     @ResponseBody
-     public CommonReturnType deleteGroup(@RequestBody GroupEx group){
-
-         groupExServiceXJS.deleteGroupEx(group);
-         List<GroupEx>  list = groupExServiceXJS.selectGroupEx();
-          return CommonReturnType.create(list,"删除成功");
+    public CommonReturnType deleteGroup(@RequestBody GroupEx group) {
+        groupExServiceXJS.deleteGroupEx(group);
+        List<GroupEx> list = groupExServiceXJS.selectGroupEx();
+        return CommonReturnType.create(list, "删除成功");
     }
 
 }
