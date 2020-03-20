@@ -1,4 +1,4 @@
-package cn.edu.upc.xjs.Service;
+package cn.edu.upc.xjs.service;
 
 
 import cn.edu.upc.manage.dao.GroupExMapper;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("groupExService5")
-public class GroupExServiceImplXJ implements GroupExServiceXJ {
+public class GroupExServiceXJSImpl implements GroupExServiceXJS {
     @Autowired
     private GroupExMapper GroupExmapper;
     @Override
@@ -17,15 +17,16 @@ public class GroupExServiceImplXJ implements GroupExServiceXJ {
         groupEx.setGroupName("null");
         GroupExmapper.insertSelective(groupEx);
     }
+    @Override
     public void changeGroupEx(GroupEx changeName) {
         GroupExmapper.updateByPrimaryKeySelect(changeName);
     }
+    @Override
      public List<GroupEx> selectGroupEx(){
        return GroupExmapper.selectByPrimaryKey();
      }
     @Override
      public int deleteGroupEx(GroupEx group){
-
         group.setDelFlag(group.getId());
         return GroupExmapper.updateDel(group);
      }

@@ -22,6 +22,7 @@ public interface ProjectMapper {
      * @param project
      * @return
      */
+    /*  A. 新增小组，*/
     int addProject(Project project);
 
     /**
@@ -31,6 +32,7 @@ public interface ProjectMapper {
      * @return
      */
     int deleteProject(Project id);
+    /*  获取项目列表  */
     List<String> getProjectName ();
 
     /**

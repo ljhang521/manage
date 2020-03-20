@@ -1,4 +1,4 @@
-package cn.edu.upc.xjs.Service;
+package cn.edu.upc.xjs.service;
 
 
 import cn.edu.upc.manage.dao.ProjectMapper;
