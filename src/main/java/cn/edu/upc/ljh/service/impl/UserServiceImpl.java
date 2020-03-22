@@ -1,8 +1,8 @@
 package cn.edu.upc.ljh.service.impl;
 
+import cn.edu.upc.ljh.service.UserService;
 import cn.edu.upc.manage.dao.UserMapper;
 import cn.edu.upc.manage.model.User;
-import cn.edu.upc.ljh.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,5 +15,8 @@ public class UserServiceImpl implements UserService {
 
     public User selectUser(int userId) {
         return userDao.selectByPrimaryKey(userId);
+    }
+    public void updateUser(User user){
+        userDao.updateByPrimaryKeySelective(user);
     }
 }

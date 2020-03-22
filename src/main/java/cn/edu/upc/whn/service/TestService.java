@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TestService {
     List<ViewMessageState> getMessageList(Integer id);
+    void updateReader(int id, int uid);
 }
