@@ -269,4 +269,19 @@
     from view_user
     where (real_name like CONCAT('%',#{input,jdbcType=VARCHAR},'%') and fieldPosition=#{fieldPosition,jdbcType=INTEGER})
   </select>
+
+<!--  董志涵-->
+
+  <select id="selectByUsername" resultMap="BaseResultMap">
+    select * from user where user_name='${username}'
+  </select>
+
+  <update id="changePasswordByEmail" >
+    update user set password='${newPassword}' where email='${email}'
+  </update>
+
+  <select id="selectByEmail" resultMap="BaseResultMap">
+    select * from user where email='${email}'
+  </select>
+
 </mapper>
