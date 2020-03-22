@@ -11,8 +11,8 @@ import java.util.List;
 public class ProjectDetail {
 
     private List<Progress> progressList;
-    private ProjectNew projectInfo;
-    private List<GroupExNew> groupList;
+    private ViewProject projectInfo;
+    private List<ViewGroupUser> groupList;
 
     public List<Progress> getProgressList() {
         return progressList;
@@ -22,19 +22,19 @@ public class ProjectDetail {
         this.progressList = progressList;
     }
 
-    public ProjectNew getProjectInfo() {
+    public ViewProject getProjectInfo() {
         return projectInfo;
     }
 
-    public void setProjectInfo(ProjectNew projectInfo) {
+    public void setProjectInfo(ViewProject projectInfo) {
         this.projectInfo = projectInfo;
     }
 
-    public List<GroupExNew> getGroupList() {
+    public List<ViewGroupUser> getGroupList() {
         return groupList;
     }
 
-    public void setGroupList(List<GroupExNew> groupList) {
+    public void setGroupList(List<ViewGroupUser> groupList) {
         this.groupList = groupList;
     }
 }

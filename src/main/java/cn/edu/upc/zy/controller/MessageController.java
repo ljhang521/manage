@@ -1,11 +1,12 @@
 package cn.edu.upc.zy.controller;
 
-import cn.edu.upc.ljh.service.MessageService;
+import cn.edu.upc.whn.service.TestService;
+import cn.edu.upc.zy.service.MessageService;
+import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @Controller
@@ -13,8 +14,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class MessageController {
     @Autowired
-    private MessageService messageService;
-//    @RequestMapping("/insertNewMeaasge")
-//
-//    @ResponseBody
+   private MessageService messageService;
+    @Autowired
+    TestService testService;
+
+    @RequestMapping("/insertNewMessage")
+    @ResponseBody
+    public CommonReturnType insertNewMessage(@RequestBody Message message){
+        messageService.insertMessage(message);
+        return CommonReturnType.create(null);
+    }
+    @RequestMapping("/getList")
+    @ResponseBody
+    public CommonReturnType getList(@RequestParam("id") Integer id){
+        return CommonReturnType.create(testService.getMessageList(id));
+    }
+    @RequestMapping("/updateReader")
+    @ResponseBody
+    public CommonReturnType updateReader(@RequestParam("id") int id,@RequestParam("uid") int uid){
+        testService.updateReader(id,uid);
+        return CommonReturnType.create(null);
+    }
 }

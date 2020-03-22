@@ -44,7 +44,7 @@ public class AreaController {
     @RequestMapping("/deletePlace")
     public CommonReturnType delete(@RequestParam(value= "id") Integer id){
         areaService.deleteArea(id);
-        return  CommonReturnType.create("22");
+        return  CommonReturnType.create("null");
     }
 
 }
