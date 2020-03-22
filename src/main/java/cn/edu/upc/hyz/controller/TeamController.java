@@ -27,34 +27,46 @@ public class TeamController {
         List<LinkedHashMap<String,Object>> l = teamStructureListService.selectTeamStructureListTechnology();
         for(Map<String,Object> lm:l){
             Object value = lm.get("technologyIdSecond");
-            System.out.println(value);
+            //System.out.println(value);
             int technologyIdSecond =Integer.parseInt(value.toString());
             lm.remove("technologyIdSecond");
+            //没有组长的方向为空
+            lm.put("manager","");
             //通过tecnology2的id查出与之相关的user（id和name），group_user（user_type），
             // （或许有manager）
             List<LinkedHashMap<String,Object>> ll = teamStructureListService.selectTeamStructureListUser(technologyIdSecond);
             //将数据处理成json样式
+            System.out.println(ll);
             List <Map<String,Object>> lllm = new ArrayList();
             Map<String,Object> map = new LinkedHashMap();
             int  group_id=0,num =1;
             for(Map<String,Object> llm:ll){
-            int flag =Integer.parseInt(llm.get("group_id").toString());
-               if(group_id == 0){
-                   map.put("groupLeader",llm.get("user_name"));
-                   group_id = Integer.parseInt(llm.get("group_id").toString());
-                   num = 1;
-               } else if(group_id != 0 && group_id == flag) {
-                    map.put("groupMember"+num++,llm.get("user_name"));
-               }else{
-                   lllm.add(map);
-                   System.out.println(map);
-                   map = new LinkedHashMap();
-                   map.put("groupLeader",llm.get("user_name"));
-                   num = 1;
-               }
+                int flag =Integer.parseInt(llm.get("group_id").toString());
+                int ifManager = Integer.parseInt(llm.get("role").toString());
+                System.out.println(ifManager);
+                if(ifManager == 0){
+                    lm.put("manager",llm.get("real_name"));
+                    System.out.println("manager:"+llm.get("real_name"));
+                    continue;
+                }
+                if(group_id == 0){
+                    map.put("groupLeader",llm.get("real_name"));
+                    group_id = Integer.parseInt(llm.get("group_id").toString());
+                    num = 1;
+                } else if(group_id != 0 && group_id == flag) {
+                    map.put("groupMember"+num++,llm.get("real_name"));
+                }else{
+                    lllm.add(map);
+                    System.out.println(map);
+                    map = new LinkedHashMap();
+                    map.put("groupLeader",llm.get("user_name"));
+                    num = 1;
+                }
             }
             //处理过的数据放入list
             lm.put("groupList",lllm);
+
+
         }
         return CommonReturnType.create(l);
     }
