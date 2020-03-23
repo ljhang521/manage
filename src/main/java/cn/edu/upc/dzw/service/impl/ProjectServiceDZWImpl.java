@@ -3,7 +3,6 @@ package cn.edu.upc.dzw.service.impl;
 import cn.edu.upc.dzw.service.ProjectServiceDZW;
 import cn.edu.upc.manage.dao.*;
 import cn.edu.upc.manage.model.*;
-import javafx.geometry.VPos;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -34,6 +33,9 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
     private ViewProjectMapper viewProjectMapper;
     @Resource
     private ViewGroupUserMapper viewGroupUserMapper;
+
+    @Resource
+    private ViewUserMapper viewUserMapper;
 
     @Override
     public List<Project> getProjectList() {
@@ -218,5 +220,38 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
         projectNew.setOperatorTime(project.getOperatorTime());
 
         return projectNew;
+    }
+
+
+    @Override
+    public List<ViewUserProject> getPersonList(Integer groupId) {
+        return viewUserMapper.getPersonList(groupId);
+    }
+
+    @Override
+    public void setPerson(GroupUser groupUser) {
+        //之前没有数据时，id可为null，有数据时id要对应
+        //userType、userId、groupId不设null
+        //增：id为空&userId、groupId不重
+        //删：userType不为0和1
+
+        //之前没有数据
+        if (groupUserMapper.selectByGroupId(groupUser).size() == 0) {
+            //勾选
+            if (groupUser.getUserType() == 0 || groupUser.getUserType() == 1) {
+                groupUserMapper.insertSelective(groupUser);
+            } else {
+                //不勾选无操作
+            }
+        } else {//之前有数据
+            //勾选
+            if (groupUser.getUserType() == 0 || groupUser.getUserType() == 1) {
+                groupUser.setDelFlag(0);
+            } else {//取消勾选
+                groupUser.setDelFlag(groupUser.getId() == null ? 1 : groupUser.getId());
+            }
+
+            groupUserMapper.updateByPrimaryKeySelective(groupUser);
+        }
     }
 }
