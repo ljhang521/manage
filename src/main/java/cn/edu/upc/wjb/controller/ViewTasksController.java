@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @CrossOrigin
 @Controller
-@RequestMapping(value = "/project",method = {RequestMethod.GET})
+@RequestMapping(value="/project",method = {RequestMethod.POST,RequestMethod.GET})
 public class ViewTasksController {
     @Autowired
     ViewTasksService viewTasksService;
 
-    @RequestMapping("/getProjectEmployeeRoleList123")
+    @RequestMapping("/getProjectEmployeeRoleList")
     @ResponseBody
     public CommonReturnType getTasksList(){
 
