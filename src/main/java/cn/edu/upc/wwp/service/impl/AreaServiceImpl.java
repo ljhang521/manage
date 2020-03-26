@@ -31,8 +31,13 @@ public class AreaServiceImpl implements AreaService {
     }
 
     @Override
-    public void deleteArea(Integer id) {
-        areaMapper.deleteByPrimaryKey(id);
-
+    public void deleteFlag(Area area) {
+        Area result = areaMapper.selectByPrimaryKey( area.getId());
+        if (result!= null){
+            area.setDelFlag(1);
+            areaMapper.updateByPrimaryKeySelective(area);
+        }
     }
+
+
 }
