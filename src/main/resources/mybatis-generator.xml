@@ -47,7 +47,7 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false"/>-->
-        <!--<table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
-               <!--enableUpdateByExample="false"/>-->
+<!--        <table tableName="manage" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
     </context>
 </generatorConfiguration>

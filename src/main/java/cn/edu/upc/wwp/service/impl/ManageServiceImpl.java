@@ -32,9 +32,15 @@ public class ManageServiceImpl implements ManageService {
     }
 
     @Override
-    public void deleteTechnology(Integer id) {
-        manageMapper.deleteByPrimaryKey(id);
+    public void deleteFlag(Manage manage) {
+        Manage result = manageMapper.selectByPrimaryKey(manage.getId());
+        if (result!= null){
+            manage.setDelFlag(1);
+            manageMapper.updateByPrimaryKeySelective(manage);
+        }
     }
+
+
 
 
 }
