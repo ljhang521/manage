@@ -9,5 +9,5 @@ public interface AreaService {
     public List<Area> selectArea();
     public void updateArea(Area record);
     public void insertArea(Area record);
-    public void deleteArea(Integer id);
+    public void deleteFlag(Area area);
 }

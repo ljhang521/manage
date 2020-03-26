@@ -25,18 +25,20 @@ public class ManageController {
 
         return  CommonReturnType.create(list1,"查询成功");
     }
-    @ResponseBody
 
     @RequestMapping("/updateTechnology")
+
+    @ResponseBody
     public CommonReturnType update(@RequestBody Manage manage){
 
         manageService.updateTechnology(manage);
 
         return  CommonReturnType.create(null);
     }
-    @ResponseBody
 
     @RequestMapping("/insertNewTechnology")
+
+    @ResponseBody
     public CommonReturnType insert(@RequestBody Manage manage){
         manageService.insertTechnology(manage);
         List<Manage> list1= manageService.selectTechnology();
@@ -44,11 +46,12 @@ public class ManageController {
         return  CommonReturnType.create(list1,"chaxun");
     }
 
-    @ResponseBody
-
     @RequestMapping("/deleteNewTechnology")
-    public CommonReturnType delete(@RequestParam(value= "id") Integer id){
-        manageService.deleteTechnology(id);
+
+    @ResponseBody
+    public CommonReturnType deleteFlag(@RequestBody Manage manage){
+        manageService.deleteFlag(manage);
         return  CommonReturnType.create("null");
     }
+
 }
