@@ -1,9 +1,6 @@
 package cn.edu.upc.dzw.service;
 
-import cn.edu.upc.manage.model.Project;
-import cn.edu.upc.manage.model.ProjectDetail;
-import cn.edu.upc.manage.model.ProjectNew;
-import cn.edu.upc.manage.model.ViewProject;
+import cn.edu.upc.manage.model.*;
 
 import java.util.List;
 
@@ -95,4 +92,22 @@ public interface ProjectServiceDZW {
      * @return
      */
     ProjectDetail getProjectDetail(Integer id);
+
+    /**
+     * 获取所有人员
+     * 项目组信息
+     * 未分页
+     *
+     * @param groupId
+     * @return
+     */
+    List<ViewUserProject> getPersonList(Integer groupId);
+
+    /**
+     * 设置人员小组信息
+     *
+     * @param groupUser
+     * @return
+     */
+    void setPerson(GroupUser groupUser);
 }

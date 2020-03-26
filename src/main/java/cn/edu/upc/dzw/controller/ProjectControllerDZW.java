@@ -2,10 +2,7 @@ package cn.edu.upc.dzw.controller;
 
 import cn.edu.upc.dzw.service.ProjectServiceDZW;
 import cn.edu.upc.manage.common.CommonReturnType;
-import cn.edu.upc.manage.model.Project;
-import cn.edu.upc.manage.model.ProjectDetail;
-import cn.edu.upc.manage.model.ProjectNew;
-import cn.edu.upc.manage.model.ViewProject;
+import cn.edu.upc.manage.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -62,5 +59,19 @@ public class ProjectControllerDZW {
     public CommonReturnType getProjectDetail(@RequestBody Project project) {
         ProjectDetail projectDetail = projectServiceDZW.getProjectDetail(project.getId());
         return CommonReturnType.create(projectDetail, "查询成功");
+    }
+
+
+    @RequestMapping(value = "/getPersonList")
+    @ResponseBody
+    public CommonReturnType getPersonList(@RequestParam("id") Integer id, @RequestParam("pageNo") Integer pageNo) {
+        return CommonReturnType.create(projectServiceDZW.getPersonList(id), "查询成功");
+    }
+
+    @RequestMapping(value = "/setPerson")
+    @ResponseBody
+    public CommonReturnType setPerson(@RequestBody GroupUser groupUser) {
+        projectServiceDZW.setPerson(groupUser);
+        return CommonReturnType.create(projectServiceDZW.getPersonList(groupUser.getGroupId()), "操作成功");
     }
 }
