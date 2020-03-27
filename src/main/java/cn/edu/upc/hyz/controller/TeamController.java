@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @CrossOrigin
 @Controller
@@ -36,36 +35,40 @@ public class TeamController {
             // （或许有manager）
             List<LinkedHashMap<String,Object>> ll = teamStructureListService.selectTeamStructureListUser(technologyIdSecond);
             //将数据处理成json样式
-            System.out.println(ll);
-            List <Map<String,Object>> lllm = new ArrayList();
-            Map<String,Object> map = new LinkedHashMap();
-            int  group_id=0,num =1;
-            for(Map<String,Object> llm:ll){
-                int flag =Integer.parseInt(llm.get("group_id").toString());
-                int ifManager = Integer.parseInt(llm.get("role").toString());
-                System.out.println(ifManager);
-                if(ifManager == 0){
-                    lm.put("manager",llm.get("real_name"));
-                    System.out.println("manager:"+llm.get("real_name"));
-                    continue;
+            List <Map<String,Object>> GroupList = new ArrayList();
+            //对数据按小组划分
+            Map<String,List<Map<String,Object>>> Group_Data = new HashMap<String,List<Map<String,Object>>>();
+            for (Map<String, Object> map : ll) {
+                String groupId = map.get("group_id").toString();
+                List<Map<String,Object>> listMap = Group_Data.get(groupId);//数据按模板编号分类
+                if(listMap == null){
+                    listMap = new ArrayList<Map<String,Object>>();
+                    Group_Data.put(groupId, listMap);
                 }
-                if(group_id == 0){
-                    map.put("groupLeader",llm.get("real_name"));
-                    group_id = Integer.parseInt(llm.get("group_id").toString());
-                    num = 1;
-                } else if(group_id != 0 && group_id == flag) {
-                    map.put("groupMember"+num++,llm.get("real_name"));
-                }else{
-                    lllm.add(map);
-                    System.out.println(map);
-                    map = new LinkedHashMap();
-                    map.put("groupLeader",llm.get("user_name"));
-                    num = 1;
-                }
+                listMap.add(map);
             }
-            //处理过的数据放入list
-            lm.put("groupList",lllm);
-
+            System.out.println(Group_Data);
+            //对数据按角色和组员类型划分
+            for (String key  : Group_Data.keySet()) {
+                Map<String,Object> GroupUsers = new LinkedHashMap<String, Object>();
+                int num = 1;
+                for(Map<String,Object> groupUser : Group_Data.get(key)){
+                    int role = Integer.parseInt(groupUser.get("role").toString());
+                    if(role == 0){
+                        lm.put("manager",groupUser.get("real_name"));
+                        // System.out.println("manager:"+llm.get("real_name"));
+                        continue;
+                    }
+                    int user_type =Integer.parseInt(groupUser.get("user_type").toString());
+                    if(user_type == 0){
+                        GroupUsers.put("groupLeader",groupUser.get("real_name"));
+                    }else if(user_type == 1){
+                        GroupUsers.put("groupMember"+num++,groupUser.get("real_name"));
+                    }
+                }
+                GroupList.add(GroupUsers);
+            }
+            lm.put("groupList",GroupList);
 
         }
         return CommonReturnType.create(l);
