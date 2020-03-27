@@ -9,5 +9,5 @@ public interface ManageService {
     public List<Manage > selectTechnology();
     public void updateTechnology(Manage record);
     public void insertTechnology(Manage record);
-    public void deleteTechnology(Integer id);
+    public void deleteFlag(Manage manage);
 }
