@@ -1,5 +1,8 @@
 package cn.edu.upc.manage.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class Project {
@@ -24,13 +27,13 @@ public class Project {
     /**
      * 新增的工作地点信息
      */
-    private String placeName;
-    public String getPlaceName() {
-        return placeName;
+    private String workPlaceName;
+    public String getWorkPlaceName() {
+        return workPlaceName;
     }
 
-    public void setPlaceName(String placeName) {
-        this.placeName = placeName;
+    public void setWorkPlaceName(String workPlaceName) {
+        this.workPlaceName = workPlaceName;
     }
 
     /**
@@ -81,6 +84,8 @@ public class Project {
      *
      * @mbg.generated Wed Mar 11 18:56:23 CST 2020
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date beginTime;
 
     /**
@@ -90,6 +95,8 @@ public class Project {
      *
      * @mbg.generated Wed Mar 11 18:56:23 CST 2020
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date endTime;
 
     /**
@@ -99,6 +106,8 @@ public class Project {
      *
      * @mbg.generated Wed Mar 11 18:56:23 CST 2020
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     /**
@@ -144,6 +153,8 @@ public class Project {
      *
      * @mbg.generated Wed Mar 11 18:56:23 CST 2020
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date operatorTime;
 
     /**

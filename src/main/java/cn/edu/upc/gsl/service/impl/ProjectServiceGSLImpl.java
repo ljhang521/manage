@@ -48,13 +48,18 @@ public class ProjectServiceGSLImpl implements ProjectServiceGSL {
             Integer workPlaceId = eachProject.getPlace();
             Integer managerId = eachProject.getManager();
 
-            if (workPlaceId !=null){
+            if (workPlaceId != null) {
                 WorkPlace workPlace = workPlaceMapper.selectByPrimaryKey(workPlaceId);
-                eachProject.setPlaceName(workPlace.getWorkPlace());
+                String workPlaceName = workPlace.getWorkPlace();
+                eachProject.setWorkPlaceName(workPlaceName);
+            }else {
+                eachProject.setWorkPlaceName("暂无");
             }
             if (managerId != null) {
                 User manager = userMapper.selectByPrimaryKey(managerId);
                 eachProject.setManagerName(manager.getRealName());
+            }else{
+                eachProject.setManagerName("暂无");
             }
         }
         return projectList;
