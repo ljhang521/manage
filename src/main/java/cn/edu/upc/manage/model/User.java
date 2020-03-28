@@ -29,6 +29,7 @@ public class User {
      * @mbg.generated Thu Mar 19 22:18:47 CST 2020
      */
     private String password;
+    private String password2;
 
     /**
      *
@@ -464,4 +465,12 @@ public class User {
     public void setOperatorTime(Date operatorTime) {
         this.operatorTime = operatorTime;
     }
+
+    public String getPassword2() {
+        return password2;
+    }
+    public void setPassword2(String password2) {
+        this.password2 = password2 == null ? null : password2.trim();
+    }
+
 }

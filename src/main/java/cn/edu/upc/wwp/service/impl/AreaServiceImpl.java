@@ -26,6 +26,7 @@ public class AreaServiceImpl implements AreaService {
 
     @Override
     public void insertArea(Area record) {
+        record.setOperator("test");
         areaMapper.insertSelective(record);
 
     }

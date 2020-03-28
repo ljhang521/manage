@@ -67,4 +67,6 @@ public interface GroupExMapper {
      * @mbg.generated Tue Mar 17 22:10:51 CST 2020
      */
     int updateByPrimaryKey(GroupEx record);
+
+    GroupEx selectGroupList(Integer projectId);
 }

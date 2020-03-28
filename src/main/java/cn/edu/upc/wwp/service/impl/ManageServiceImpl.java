@@ -22,7 +22,7 @@ public class ManageServiceImpl implements ManageService {
 
     @Override
     public void updateTechnology(Manage record) {
-
+        record.setOperator("test");
         manageMapper. updateByPrimaryKeySelective(record);
     }
 
