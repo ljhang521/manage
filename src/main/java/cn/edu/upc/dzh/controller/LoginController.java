@@ -3,6 +3,7 @@ package cn.edu.upc.dzh.controller;
 import cn.edu.upc.dzh.service.LoginService;
 import cn.edu.upc.dzh.until.MD5Util;
 import cn.edu.upc.dzh.until.SendEmailUtil;
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.dzh.until.exception.BusinessException;
 import cn.edu.upc.dzh.until.exception.EmBusinessError;
 import cn.edu.upc.ljh.service.UserService;
@@ -83,10 +84,24 @@ public class LoginController {
     @ResponseBody
     public CommonReturnType logout(){
 
+
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return CommonReturnType.create("退出成功");
 
+    }
+
+    @RequestMapping("/pleaseLogin")
+    @ResponseBody
+    public CommonReturnType pleaseLogin(){
+
+        throw new BusinessException(EmBusinessError.PLEASE_LOGIN);
+    }
+
+    @RequestMapping("/noAuth")
+    @ResponseBody
+    public CommonReturnType noAuth(){
+        throw new BusinessException(EmBusinessError.NO_PERMISSSION);
     }
 
     /**

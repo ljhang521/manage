@@ -79,11 +79,11 @@
         <!-- 登录页面 -->
         <!--        <property name="loginUrl" value="/login.jsp" />-->
 
-        <property name="loginUrl" value="/web" />
+        <property name="loginUrl" value="/web/pleaseLogin" />
         <!-- 登录成功页面 -->
         <property name="successUrl" value="/WEB-INF/views/home.jsp"/>
         <!-- 没有权限的页面 -->
-        <!-- <property name="unauthorizedUrl" value="/unauthorized.jsp"/> -->
+         <property name="unauthorizedUrl" value="/web/noAuth"/>
         <!--
           配置哪些页面需要受保护.
           以及访问这些页面需要的权限.
