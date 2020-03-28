@@ -22,29 +22,31 @@ public class AreaController {
         List<Area> list1= areaService.selectArea();
         return  CommonReturnType.create(list1);
     }
-    @ResponseBody
 
     @RequestMapping("/insertPlace")
+
+    @ResponseBody
     public CommonReturnType insert(@RequestBody Area area){
         areaService.insertArea(area);
         List<Area> list2= areaService.selectArea();
         return  CommonReturnType.create(list2,"查询成功");
 
     }
-    @ResponseBody
 
     @RequestMapping("/updateNewPlace")
+
+    @ResponseBody
     public CommonReturnType update(@RequestBody Area area) {
 
         areaService.updateArea(area);
         return CommonReturnType.create(null);
     }
-    @ResponseBody
 
     @RequestMapping("/deletePlace")
-    public CommonReturnType delete(@RequestParam(value= "id") Integer id){
-        areaService.deleteArea(id);
+
+    @ResponseBody
+    public CommonReturnType deleteFlag(@RequestBody Area area){
+        areaService.deleteFlag(area);
         return  CommonReturnType.create("null");
     }
-
 }

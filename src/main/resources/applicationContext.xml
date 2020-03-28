@@ -81,7 +81,7 @@
 
         <property name="loginUrl" value="/web/pleaseLogin" />
         <!-- 登录成功页面 -->
-        <property name="successUrl" value="/WEB-INF/views/home.jsp"/>
+<!--        <property name="successUrl" value="/WEB-INF/views/home.jsp"/>-->
         <!-- 没有权限的页面 -->
          <property name="unauthorizedUrl" value="/web/noAuth"/>
         <!--
@@ -100,6 +100,7 @@
                 /web/logout = anon
                 /web/sendCode = anon
                 /web/codeMaching = anon
+                /web/register= anon
 
                 <!-- 其他的需要授权访问authc -->
 

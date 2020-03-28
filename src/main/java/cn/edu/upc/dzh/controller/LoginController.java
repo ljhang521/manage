@@ -67,6 +67,7 @@ public class LoginController {
             subject.login(token);
             returnMsg.put("loginTips","登陆成功");
             System.out.println("返回权限1");
+            returnMsg.put("userType",SysUser.getCurrentUserRole());
             return CommonReturnType.create(returnMsg);
         } catch (UnknownAccountException e) {
             //用户不存在
