@@ -26,8 +26,8 @@ public class MessageController {
     }
     @RequestMapping("/getList")
     @ResponseBody
-    public CommonReturnType getList(@RequestParam("id") Integer id){
-        return CommonReturnType.create(testService.getMessageList(id));
+    public CommonReturnType getList(@RequestBody Message message){
+        return CommonReturnType.create(messageService.getMessageList(message.getId()));
     }
     @RequestMapping("/updateReader")
     @ResponseBody
