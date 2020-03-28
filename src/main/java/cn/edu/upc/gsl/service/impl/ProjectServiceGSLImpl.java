@@ -30,8 +30,8 @@ public class ProjectServiceGSLImpl implements ProjectServiceGSL {
     /**
      * 根据项目名称返回对应的项目列表
      *
-     * @param projectName
-     * @return
+     * @param projectName 项目名称
+     * @return 
      */
     @Override
     public List<Project> selectProjectList(String projectName) {

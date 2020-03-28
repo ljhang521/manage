@@ -31,7 +31,6 @@ public class Project {
     public String getWorkPlaceName() {
         return workPlaceName;
     }
-
     public void setWorkPlaceName(String workPlaceName) {
         this.workPlaceName = workPlaceName;
     }
