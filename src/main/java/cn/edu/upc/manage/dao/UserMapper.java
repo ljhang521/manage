@@ -65,6 +65,8 @@ public interface UserMapper {
 
     public User selectByEmail(@Param("email") String email);
 
+    public void changePassword(@Param("newPassword") String newPassword,@Param("id") String id);
+
     //于向洋
     User selectByUserName(User user);
 }

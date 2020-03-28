@@ -104,7 +104,7 @@
 
                 <!-- 其他的需要授权访问authc -->
 
-                /**=authc
+<!--                /**=authc-->
             </value>
         </property>
     </bean>
