@@ -9,4 +9,8 @@ public class SysUser {
         User user = (User) SecurityUtils.getSubject().getPrincipal();
         return user.getId();
     }
+    public static Integer getCurrentUserRole(){
+        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        return user.getRole();
+    }
 }

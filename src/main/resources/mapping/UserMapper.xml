@@ -284,4 +284,8 @@
     select * from user where email='${email}'
   </select>
 
+  <update id="changePassword" >
+    update user set password='${newPassword}' where id='${id}'
+  </update>
+
 </mapper>
