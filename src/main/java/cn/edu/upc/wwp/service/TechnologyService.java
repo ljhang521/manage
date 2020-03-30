@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface TechnologyService {
 
-   public List<TechnologyParam> selectTechnology();
+   public List<Technology> selectTechnology();
 
-   public void updateTechnology(TechnologyParam upTechnologyParam);
-    public void insertTechnology(TechnologyParam upTechnologyParam);
+   public void updateTechnology(Technology upTechnologyParam);
+    public void insertTechnology(Technology upTechnologyParam);
    public void deleteFlag(Technology deleteRecord);
 }

@@ -23,7 +23,7 @@ public class TechnologyController {
 
     public CommonReturnType select(){
 
-        List<TechnologyParam> list1= technologyService.selectTechnology();
+        List<Technology> list1= technologyService.selectTechnology();
 
         return  CommonReturnType.create(list1,"查询成功");
     }
@@ -31,21 +31,19 @@ public class TechnologyController {
     @RequestMapping("/updateTechnology")
 
     @ResponseBody
-    public CommonReturnType update(@RequestBody TechnologyParam upTechnologyParam){
+    public CommonReturnType update(@RequestBody Technology technology){
 
-        technologyService.updateTechnology(upTechnologyParam);
-        List<TechnologyParam> list1= technologyService.selectTechnology();
-        String msg;
+        technologyService.updateTechnology(technology);
+        List<Technology> list1= technologyService.selectTechnology();
         return  CommonReturnType.create(list1,"更新成功");
     }
 
     @RequestMapping("/insertNewTechnology")
 
     @ResponseBody
-    public CommonReturnType insert(@RequestBody TechnologyParam inTechnologyParam){
-        technologyService.insertTechnology(inTechnologyParam);
-        List<TechnologyParam> list1= technologyService.selectTechnology();
-        String msg;
+    public CommonReturnType insert(@RequestBody Technology technology){
+        technologyService.insertTechnology(technology);
+        List<Technology> list1= technologyService.selectTechnology();
         return  CommonReturnType.create(list1,"插入成功");
     }
 
@@ -54,7 +52,8 @@ public class TechnologyController {
     @ResponseBody
     public CommonReturnType deleteFlag(@RequestBody Technology delTechnology){
         technologyService.deleteFlag(delTechnology);
-        return  CommonReturnType.create("null");
+        List<Technology> list1= technologyService.selectTechnology();
+        return CommonReturnType.create(list1,"删除成功");
     }
 
 

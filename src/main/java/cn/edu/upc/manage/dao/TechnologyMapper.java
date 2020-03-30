@@ -67,5 +67,5 @@ public interface TechnologyMapper {
      * 这个类将联合groupUer和User通过technologyIdSecond返回值查出tecnolygy的相关研究组和研究人员
      */
     List<Technology> technologySelect();
-    List<TechnologyParam> technologySelectParam();
+    //List<TechnologyParam> technologySelectParam();
 }
