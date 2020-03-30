@@ -22,9 +22,7 @@ public class TechnologyController {
 
 
     public CommonReturnType select(){
-
         List<Technology> list1= technologyService.selectTechnology();
-
         return  CommonReturnType.create(list1,"查询成功");
     }
 
