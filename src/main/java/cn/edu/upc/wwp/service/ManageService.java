@@ -10,4 +10,5 @@ public interface ManageService {
     public void updateTechnology(Manage record);
     public void insertTechnology(Manage record);
     public void deleteFlag(Manage manage);
+
 }
