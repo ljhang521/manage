@@ -6,7 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c0543a5-66a7-4384-bde1-92121d62a9c2" name="Default Changelist" comment="">
+    <list default="true" id="6c0543a5-66a7-4384-bde1-92121d62a9c2" name="Default Changelist" comment="修改武万萍bug--ljh">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_remote-tracking_branch_'origin_master'__#_Conflicts__#_src_main_resources_mybatis-ge.patch" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585573785825</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="修改我的bug--hyz">
+      <created>1585648445474</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585648445474</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,21 +241,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="登录授权问题--ljh" />
     <MESSAGE value="修改武万萍bug--ljh" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改武万萍bug--ljh" />
+    <MESSAGE value="修改我的bug--hyz" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改我的bug--hyz" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="253" y="5" key="CommitChangelistDialog2" timestamp="1585648365887">
+    <state x="253" y="5" key="CommitChangelistDialog2" timestamp="1585648525591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="253" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585648365887" />
+    <state x="253" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585648525591" />
     <state width="661" height="442" key="Diff.GoToChangePopup" timestamp="1585648347833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="661" height="442" key="Diff.GoToChangePopup/0.0.1536.824@0.0.1536.824" timestamp="1585648347833" />
-    <state x="147" y="64" key="DiffContextDialog" timestamp="1585648360657">
+    <state x="147" y="64" key="DiffContextDialog" timestamp="1585648411314">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1585648360657" />
+    <state x="147" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1585648411314" />
     <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585648390900">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
