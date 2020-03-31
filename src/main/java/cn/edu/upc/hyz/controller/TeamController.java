@@ -47,7 +47,7 @@ public class TeamController {
                 }
                 listMap.add(map);
             }
-            System.out.println(Group_Data);
+            //System.out.println(Group_Data);
             //对数据按角色和组员类型划分
             for (String key  : Group_Data.keySet()) {
                 Map<String,Object> GroupUsers = new LinkedHashMap<String, Object>();
@@ -68,9 +68,69 @@ public class TeamController {
                 }
                 GroupList.add(GroupUsers);
             }
+
             lm.put("groupList",GroupList);
 
         }
-        return CommonReturnType.create(l);
+       LinkedHashMap<String,Object> organizationStructure = dataProcessing(l);
+        return CommonReturnType.create(organizationStructure);
+    }
+
+    public LinkedHashMap<String,Object> dataProcessing(List<LinkedHashMap<String,Object>> data){
+        //根节点
+        LinkedHashMap<String,Object> organizationStructure = new  LinkedHashMap<String,Object>();
+        organizationStructure.put("name","组织结构");
+        List<LinkedHashMap<String,Object>> projects = new ArrayList<LinkedHashMap<String, Object>>();
+        //因为原格式将technologyName层数据处理，形成一个technologyName层有多个technologyNameSecond层
+        LinkedHashMap<String,Object> technologyName = new  LinkedHashMap<String,Object>();
+        List<LinkedHashMap<String,Object>> technologyNames = new ArrayList<LinkedHashMap<String, Object>>();
+        technologyName.put("name",data.get(0).get("technologyName"));
+        //叶节点
+        for(LinkedHashMap<String,Object> data1:data){
+            //technologyName层
+            if(!technologyName.get("name").equals(data1.get("technologyName"))  ){
+                projects.add(technologyName);
+                technologyName = new  LinkedHashMap<String,Object>();
+                technologyNames = new ArrayList<LinkedHashMap<String, Object>>();
+                technologyName.put("name",data1.get("technologyName"));
+            }
+            //technologyNameSecond层
+            LinkedHashMap<String,Object> technologyNameSecond = new  LinkedHashMap<String,Object>();
+            List<LinkedHashMap<String,Object>> technologyNameSeconds = new ArrayList<LinkedHashMap<String, Object>>();
+            technologyNameSecond.put("name",data1.get("technologyNameSecond"));
+            //manager层
+            LinkedHashMap<String,Object> manager = new  LinkedHashMap<String,Object>();
+            List<Object> managers = new ArrayList<Object>();
+            manager.put("name",data1.get("manager"));
+            //group和User层
+            List<LinkedHashMap<String,Object>> groupList =(List<LinkedHashMap<String,Object>>) data1.get("groupList");
+            for(LinkedHashMap<String,Object> groupl:groupList){
+                List<LinkedHashMap<String,Object>> group = new ArrayList<LinkedHashMap<String, Object>>();
+                for(String key:groupl.keySet()){
+                    technologyName.put("children",technologyNames);
+                    LinkedHashMap<String,Object> user = new LinkedHashMap<String,Object>();
+                    user.put("name",groupl.get(key));
+                    group.add(user);
+                }
+                managers.add(group);
+            }
+            /*数据处理成
+            *Children：
+            * [
+            *   {
+            *   }
+            * ]
+            * 的形式，为每个map加一层list
+            * */
+            manager.put("children",managers);
+            technologyNameSeconds.add(manager);
+            technologyNameSecond.put("children",technologyNameSeconds);
+            technologyNames.add(technologyNameSecond);
+            //projects.add(technologyName);
+        }
+        technologyName.put("children",technologyNames);
+        projects.add(technologyName);
+        organizationStructure.put("children",projects);
+        return organizationStructure;
     }
 }
