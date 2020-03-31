@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6c0543a5-66a7-4384-bde1-92121d62a9c2" name="Default Changelist" comment="修改武万萍bug--ljh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_remote-tracking_branch_'origin_master'__#_Conflicts__#_src_main_resources_mybatis-ge.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/controller/TeamController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +37,15 @@
     <option name="width" value="1024" />
     <option name="height" value="649" />
   </component>
+  <component name="ProjectId" id="1ZtBnKzZ8AGFrZCX0hbMAHiT8lt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -204,7 +211,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f38c743c-b900-49cc-9b36-3ef8d234fb32" name="Default Changelist" comment="" />
+      <changelist id="6c0543a5-66a7-4384-bde1-92121d62a9c2" name="Default Changelist" comment="修改武万萍bug--ljh" />
       <created>1584531904669</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -217,6 +224,7 @@
       <workItem from="1585293978607" duration="6019000" />
       <workItem from="1585549917572" duration="193000" />
       <workItem from="1585550279696" duration="8597000" />
+      <workItem from="1585648676885" duration="1428000" />
     </task>
     <task id="LOCAL-00001" summary="修改武万萍bug--ljh">
       <created>1585573785825</created>
@@ -232,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585648445474</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改武万萍bug--ljh">
+      <created>1585648564602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585648564602</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,15 +255,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="登录授权问题--ljh" />
-    <MESSAGE value="修改武万萍bug--ljh" />
     <MESSAGE value="修改我的bug--hyz" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改我的bug--hyz" />
+    <MESSAGE value="修改武万萍bug--ljh" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改武万萍bug--ljh" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="253" y="5" key="CommitChangelistDialog2" timestamp="1585648525591">
+    <state x="253" y="5" key="CommitChangelistDialog2" timestamp="1585648596927">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="253" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585648525591" />
+    <state x="253" y="5" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585648596927" />
     <state width="661" height="442" key="Diff.GoToChangePopup" timestamp="1585648347833">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -257,10 +272,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="64" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1585648411314" />
-    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585648390900">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1585648628878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1585648390900" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585648628878" />
+    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585651099427">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="564" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1585651099427" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
