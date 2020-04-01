@@ -29,7 +29,7 @@ public class TeamController {
             int technologyIdSecond =Integer.parseInt(value.toString());
             lm.remove("technologyIdSecond");
             //没有组长的方向为空
-            lm.put("manager","项目负责人");
+            lm.put("manager","");
             //通过tecnology2的id查出与之相关的user（id和name），group_user（user_type），
             // （或许有manager）
             List<LinkedHashMap<String,Object>> ll = teamStructureListService.selectTeamStructureListUser(technologyIdSecond);
@@ -69,7 +69,7 @@ public class TeamController {
             lm.put("groupList",GroupList);
         }
         LinkedHashMap<String,Object> organizationStructure = dataProcessing(l);
-        return CommonReturnType.create(l);
+        return CommonReturnType.create(organizationStructure);
     }
 
     @RequestMapping("/getTeamStructure")
@@ -88,44 +88,44 @@ public class TeamController {
                 int technologyIdSecond =Integer.parseInt(value.toString());
                 lm.remove("technologyIdSecond");
                 //没有组长的方向为空
-                lm.put("manager","项目负责人");
+                lm.put("manager","");
+                String groupLeader = "";
                 //通过tecnology2的id查出与之相关的user（id和name），group_user（user_type），
                 // （或许有manager）
-                List<LinkedHashMap<String,Object>> ll = teamStructureListService.selectTeamStructureListUser(technologyIdSecond);
+                List<LinkedHashMap<String,Object>> users = teamStructureListService.selectUserForTechnology(technologyIdSecond);
                 //将数据处理成json样式
-                List <Map<String,Object>> GroupList = new ArrayList();
-                //对数据按小组划分
-                Map<String,List<Map<String,Object>>> Group_Data = new HashMap<String,List<Map<String,Object>>>();
-                for (Map<String, Object> map : ll) {
-                    String groupId = map.get("group_id").toString();
-                    List<Map<String,Object>> listMap = Group_Data.get(groupId);//数据按模板编号分类
-                    if(listMap == null){
-                        listMap = new ArrayList<Map<String,Object>>();
-                        Group_Data.put(groupId, listMap);
+                //存放组员
+
+                List <Map<String,Object>> groupList = new ArrayList();
+                Map<String,Object> groupMembers =new LinkedHashMap<String,Object>();
+                /*
+                * 0--manager组长（项目管理人，只有一个）
+                * 1--groupLeader小组长（有数个，放在一起）
+                * 2--groupMember组员（有数个）
+                * */
+                int groupMember  = 1 ;
+                int flag = 0 ;
+                for(LinkedHashMap<String,Object> user:users){
+                    System.out.println(user);
+                    int  role = Integer.parseInt(user.get("role").toString());
+                    if(role == 0){
+                        lm.put("manager",user.get("real_name"));
                     }
-                    listMap.add(map);
-                }
-                //System.out.println(Group_Data);
-                //对数据按角色和组员类型划分
-                for (String key  : Group_Data.keySet()) {
-                    Map<String,Object> GroupUsers = new LinkedHashMap<String, Object>();
-                    int num = 1;
-                    for(Map<String,Object> groupUser : Group_Data.get(key)){
-                        int role = Integer.parseInt(groupUser.get("role").toString());
-                        if(role == 0){
-                            lm.put("manager",groupUser.get("real_name"));
-                            continue;
-                        }
-                        int user_type =Integer.parseInt(groupUser.get("user_type").toString());
-                        if(user_type == 0){
-                            GroupUsers.put("groupLeader",groupUser.get("real_name"));
-                        }else if(user_type == 1){
-                            GroupUsers.put("groupMember"+num++,groupUser.get("real_name"));
-                        }
+                    else if(role == 1){
+                        if(flag++ == 0)
+                            groupLeader = groupLeader  + user.get("real_name").toString() ;
+                        else
+                            groupLeader = groupLeader + "\n" + user.get("real_name").toString() ;
+
                     }
-                    GroupList.add(GroupUsers);
+                    else if(role == 2) {
+                        groupMembers.put("groupMember" + groupMember++, user.get("real_name").toString());
+                    }
                 }
-                lm.put("groupList",GroupList);
+
+                lm.put("groupLeader", groupLeader);
+                groupList.add(groupMembers);
+                lm.put("groupList",groupList);
             }
             technology.put("technologySecond",technologySecondData);
         }
@@ -176,7 +176,6 @@ public class TeamController {
             lm.put("groupList",GroupList);
         }*/
         LinkedHashMap<String,Object> organizationStructure = dataHandling(technologys);
-
         return CommonReturnType.create(organizationStructure);
     }
 
@@ -215,6 +214,8 @@ public class TeamController {
                 for(String key:groupl.keySet()){
                     LinkedHashMap<String,Object> user = new LinkedHashMap<String,Object>();
                     user.put("name",groupl.get(key));
+                    /*List<Object> test = new ArrayList<Object>();
+                    user.put("children",test);*/
                     group.add(user);
                 }
                 //为了能显示，多加一层team
@@ -267,27 +268,31 @@ public class TeamController {
                 //technologySecondName层
                 LinkedHashMap<String,Object> technologyNameSecond = new  LinkedHashMap<String,Object>();
                 List<LinkedHashMap<String,Object>> technologyNameSeconds = new ArrayList<LinkedHashMap<String, Object>>();
-                technologyNameSecond.put("name",data3.get("technologyNameSecond"));
+                technologyNameSecond.put("name",data3.get("technologyNameSecond").toString());
                 //manager层
                 LinkedHashMap<String,Object> manager = new  LinkedHashMap<String,Object>();
                 List<Object> managers = new ArrayList<Object>();
-                manager.put("name",data3.get("manager"));
-                int teamNum = 1;
+                manager.put("name",data3.get("manager").toString());
+                //groupLeader层
+                LinkedHashMap<String,Object> groupLeader = new  LinkedHashMap<String,Object>();
+                List<Object> groupLeaders = new ArrayList<Object>();
+                groupLeader.put("name",data3.get("groupLeader").toString());
                 //group和User层
+                //对一长窜的user进行跟踪
+                List<Object> user = groupLeaders ;
+                int flag = 0;
                 List<LinkedHashMap<String, Object>> groupList = (List<LinkedHashMap<String, Object>>) data3.get("groupList");
                 for(LinkedHashMap<String,Object> groupl:groupList){
-                    List<LinkedHashMap<String,Object>> group = new ArrayList<LinkedHashMap<String, Object>>();
-                    for(String key:groupl.keySet()){
-                        LinkedHashMap<String,Object> user = new LinkedHashMap<String,Object>();
-                        user.put("name",groupl.get(key));
-                        group.add(user);
+                        for(String key : groupl.keySet()){
+                            LinkedHashMap<String,Object> userNode = new  LinkedHashMap<String,Object>();
+                            userNode.put("name",groupl.get(key).toString());
+                            user.add(userNode);
+                            user = new ArrayList<Object>();
+                            userNode.put("children",user);
                     }
-                    //为了能显示，多加一层team
-                    Map<String,Object> team = new LinkedHashMap<String,Object>();
-                    team.put("name","队伍"+teamNum++);
-                    team.put("children",group);
-                    managers.add(team);
                 }
+                groupLeader.put("children",groupLeaders);
+                managers.add(groupLeader);
                 manager.put("children",managers);
                 technologyNameSeconds.add(manager);
                 technologyNameSecond.put("children",technologyNameSeconds);

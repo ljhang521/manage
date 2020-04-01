@@ -8,4 +8,5 @@ public interface TeamStructureListService {
     public List<LinkedHashMap<String, Object>> selectTeamStructureListTechnologyTest();
     public List<LinkedHashMap<String, Object>> selectTeamStructureListTechnologySecond(int technologyId);
     public List<LinkedHashMap<String, Object>> selectTeamStructureListUser(int technologyIdSecond);
+    public List<LinkedHashMap<String, Object>> selectUserForTechnology(int technologyIdSecond);
 }

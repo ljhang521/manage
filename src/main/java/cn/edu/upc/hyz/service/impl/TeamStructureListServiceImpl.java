@@ -26,4 +26,7 @@ public class TeamStructureListServiceImpl implements TeamStructureListService {
     public List<LinkedHashMap<String, Object>> selectTeamStructureListUser(int technologyIdSecond){
         return technologyMapper.selectTeamStructureListUser(technologyIdSecond);
     }
+    public List<LinkedHashMap<String, Object>> selectUserForTechnology(int technologyIdSecond){
+        return technologyMapper.selectUserForTechnology(technologyIdSecond);
+    }
 }
