@@ -74,6 +74,10 @@ public interface TechnologyMapper {
     /*
      * 查询technologySecond的id和name
      * */
+    List<LinkedHashMap<String,Object>> selectUserForTechnology(int technologyIdSecond);
+    /*
+    * 查询user表中的realname和role
+    * */
 
     List<Technology> technologySelect();
     //List<TechnologyParam> technologySelectParam();

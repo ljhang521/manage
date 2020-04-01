@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface MessageService {
     public  void insertMessage(Message message);
-    List<ViewMessageState> getMessageList(Integer id);
-    void updateReader(int id, int uid);
+    List<ViewMessageState> getMessageList(ViewMessageState message);
+    void updateReader(ViewMessageState message);
 }
