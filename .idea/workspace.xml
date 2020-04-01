@@ -7,10 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f38c743c-b900-49cc-9b36-3ef8d234fb32" name="Default Changelist" comment="登录授权问题--ljh">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ViewGroupUserNew.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/zy/controller/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/zy/controller/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/zy/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/zy/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/zy/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_remote-tracking_branch_'origin_master'__#_Conflicts__#_src_main_resources_mybatis-ge.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzw/service/impl/ProjectServiceDZWImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzw/service/impl/ProjectServiceDZWImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/controller/TeamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/controller/TeamController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/service/TeamStructureListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/service/TeamStructureListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/service/impl/TeamStructureListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/hyz/service/impl/TeamStructureListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/TechnologyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/TechnologyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/ViewGroupUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/ViewGroupUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ProjectDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ProjectDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/TechnologyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/TechnologyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ViewGroupUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ViewGroupUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,6 +240,7 @@
       <workItem from="1585550279696" duration="8597000" />
       <workItem from="1585630677356" duration="1662000" />
       <workItem from="1585700346020" duration="970000" />
+      <workItem from="1585726535663" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="修改武万萍bug--ljh">
       <created>1585573785825</created>
