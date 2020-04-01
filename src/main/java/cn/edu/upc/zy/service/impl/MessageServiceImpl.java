@@ -1,10 +1,10 @@
 package cn.edu.upc.zy.service.impl;
 
+import cn.edu.upc.manage.dao.MessageMapper;
 import cn.edu.upc.manage.dao.ViewMessageStateMapper;
+import cn.edu.upc.manage.model.Message;
 import cn.edu.upc.manage.model.ViewMessageState;
 import cn.edu.upc.zy.service.MessageService;
-import cn.edu.upc.manage.dao.MessageMapper;
-import cn.edu.upc.manage.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,19 +24,19 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<ViewMessageState> getMessageList(Integer id) {
-        List<ViewMessageState> list = viewMessageStateMapper.getMessageList(id);
+    public List<ViewMessageState> getMessageList(ViewMessageState message){
+        List<ViewMessageState> list = viewMessageStateMapper.getMessageList(message.getId());
         return list;
     }
 
     @Override
-    public void updateReader(int id, int uid) {
-        Message result = messageMapper.selectByPrimaryKey(id);
+    public void updateReader(ViewMessageState message) {
+        Message result = messageMapper.selectByPrimaryKey(message.getId());
         if (result != null){
-            Message message = new Message();
-            message.setId(id);
-            message.setReader(result.getReader()+uid+',');
-            messageMapper.updateByPrimaryKeySelective(message);
+            Message message1 = new Message();
+           message1.setId(message1.getId());
+         message1.setReader(result.getReader()+ message.getUserId()+',');
+            messageMapper.updateByPrimaryKeySelective(message1);
         }
 
     }
