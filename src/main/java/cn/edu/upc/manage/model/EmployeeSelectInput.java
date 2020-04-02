@@ -2,7 +2,7 @@ package cn.edu.upc.manage.model;
 
 public class EmployeeSelectInput {
     private String input;
-    private int fieldPosition;
+    private int technology;
 
     public String getInput() {
         return input;
@@ -12,11 +12,11 @@ public class EmployeeSelectInput {
         this.input = input;
     }
 
-    public int getFieldPosition() {
-        return fieldPosition;
+    public int getTechnology() {
+        return technology;
     }
 
-    public void setFieldPosition(int fieldPosition) {
-        this.fieldPosition = fieldPosition;
+    public void setTechnology(int technology) {
+        this.technology = technology;
     }
 }
