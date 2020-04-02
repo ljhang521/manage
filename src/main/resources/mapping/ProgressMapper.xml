@@ -242,4 +242,5 @@
   <select id="selectProgress" resultMap="BaseResultMap">
     select * from progress  where project_id=#{projectId}
   </select>
+
 </mapper>

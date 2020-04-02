@@ -6,6 +6,13 @@ import java.util.List;
 
 public interface GroupUserMapper {
     /**
+     * 删除小组赋值delFlag
+     *
+     * @param userId
+     * @return
+     */
+    int groupDel(GroupUser userId);
+    /**
      * 选取小组成员
      *
      * @param groupId

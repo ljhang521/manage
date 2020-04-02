@@ -2,6 +2,8 @@ package cn.edu.upc.xjs.service;
 
 
 import cn.edu.upc.manage.model.GroupEx;
+import cn.edu.upc.manage.model.GroupUser;
+import cn.edu.upc.manage.model.ViewGroupUser;
 
 import java.util.List;
 
@@ -30,8 +32,9 @@ public interface GroupExServiceXJS {
     /**
      * 根据id值删除小组，实际是为del_flag赋值为id值
      *
-     * @param group
+     * @param groupUser
      * @return
      */
+    int deleteGroupUser(GroupUser groupUser);
     int deleteGroupEx(GroupEx group);
 }
