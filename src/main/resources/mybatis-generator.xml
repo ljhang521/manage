@@ -49,5 +49,9 @@
                <!--enableUpdateByExample="false"/>-->
 <!--        <table tableName="technology" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               enableUpdateByExample="false"/>-->
+        <!--<table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false"/>-->
+        <!--<table tableName = "work_place" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+                <!--enableUpdateByExample="false"/>-->
     </context>
 </generatorConfiguration>
