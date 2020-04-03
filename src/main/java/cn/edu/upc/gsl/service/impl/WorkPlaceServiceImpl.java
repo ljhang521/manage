@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/**
+ * @author gsl
+ * @date 2020/3/31
+ */
 @Service("workPlace")
 public class WorkPlaceServiceImpl implements WorkPlaceService {
     @Autowired

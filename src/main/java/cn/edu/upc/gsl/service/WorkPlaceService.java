@@ -10,5 +10,9 @@ import java.util.List;
  */
 public interface WorkPlaceService {
 
+    /**
+     * 获取全部项目地址
+     * @return
+     */
     List<WorkPlace> workPlaceList();
 }

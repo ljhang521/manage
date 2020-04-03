@@ -69,4 +69,11 @@ public interface UserMapper {
 
     //于向洋
     User selectByUserName(User user);
+
+    /**
+     * gsl
+     * @date 2020/4/2
+     * @return 从user表里根据role值 查出 项目经理manager
+     */
+    List<User> selectManagerByRole();
 }
