@@ -243,20 +243,21 @@
     and technology.p_id = #{technologyId}
   </select>
 
-  <resultMap id="userRole" type="java.util.LinkedHashMap">
+  <resultMap id="userFieldPosition" type="java.util.LinkedHashMap">
     <result column="real_name" jdbcType="INTEGER" property="real_name" />
-    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="field_position" jdbcType="VARCHAR" property="field_position" />
   </resultMap>
 
-  <select id="selectUserForTechnology" parameterType="int" resultMap="userRole">
+  <select id="selectUserForTechnology" parameterType="int" resultMap="userFieldPosition">
     SELECT
         `user`.real_name,
-        `user`.role
+        `user`.field_position
     FROM
         `user`
     WHERE
+        `user`.field_position &lt;&gt; 'null'  AND
         `user`.del_flag =  '0' AND
-        `user`.technology =  #{technologyIdSecond}
+        `user`.technology =  5
   </select>
 
   <select id="technologySelect" resultMap="BaseResultMap">

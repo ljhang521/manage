@@ -98,7 +98,7 @@ public class ViewGroupUser {
      * @return the value of view_group_user.project_id
      * @mbg.generated Fri Mar 20 23:11:58 CST 2020
      */
-    public Integer getProjectId() {
+    public  Integer getProjectId() {
         return projectId;
     }
 

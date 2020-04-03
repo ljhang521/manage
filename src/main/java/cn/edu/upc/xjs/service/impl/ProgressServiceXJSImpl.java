@@ -23,6 +23,7 @@ public class ProgressServiceXJSImpl implements ProgressServiceXJS {
     @Autowired
     private ProgressMapper deleteMapper;
 
+
     @Override
     public List<Progress> selectProgress(Progress projectId) {
         return progressMapper.selectProgress(projectId);

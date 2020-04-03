@@ -76,6 +76,7 @@ public class TeamController {
     @ResponseBody
     public CommonReturnType getTeamStructure(){
         List<LinkedHashMap<String, Object>> technologys = teamStructureListService.selectTeamStructureListTechnologyTest();
+        System.out.println(technologys);
         //连接tecnology和technologySecond
         System.out.println(technologys);
         for(Map<String ,Object>technology:technologys ){
@@ -107,18 +108,18 @@ public class TeamController {
                 int flag = 0 ;
                 for(LinkedHashMap<String,Object> user:users){
                     System.out.println(user);
-                    int  role = Integer.parseInt(user.get("role").toString());
-                    if(role == 0){
+                    int  fieldPosition = Integer.parseInt(user.get("field_position").toString());
+                    if(fieldPosition == 1){
                         lm.put("manager",user.get("real_name"));
                     }
-                    else if(role == 1){
+                    else if(fieldPosition == 2){
                         if(flag++ == 0)
                             groupLeader = groupLeader  + user.get("real_name").toString() ;
                         else
                             groupLeader = groupLeader + "\n" + user.get("real_name").toString() ;
 
                     }
-                    else if(role == 2) {
+                    else if(fieldPosition == 3) {
                         groupMembers.put("groupMember" + groupMember++, user.get("real_name").toString());
                     }
                 }
