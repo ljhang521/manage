@@ -68,5 +68,5 @@ public interface UserMapper {
     public void changePassword(@Param("newPassword") String newPassword,@Param("id") String id);
 
     //于向洋
-    User selectByUserName(User user);
+    //public User selectByUserName(User user);
 }
