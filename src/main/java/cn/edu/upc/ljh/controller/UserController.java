@@ -13,11 +13,24 @@ import java.util.List;
 
 @CrossOrigin
 @Controller
-@RequestMapping(value="/project",method = {RequestMethod.POST,RequestMethod.GET})
+@RequestMapping(value="/user",method = {RequestMethod.POST,RequestMethod.GET})
 public class UserController {
 
     @Autowired
     private UserService userService;
+
+    /**
+     * gsl
+     * 从user表获取管理者名单：manager
+     * @date 2020/4/2
+     * @return managerList
+     */
+    @RequestMapping("/manager")
+    @ResponseBody
+    public CommonReturnType getManagerList(){
+        List<User> managerList = userService.selectManager();
+        return CommonReturnType.create(managerList,"获取成功");
+    }
 
     @RequestMapping("/json4")
     @ResponseBody
