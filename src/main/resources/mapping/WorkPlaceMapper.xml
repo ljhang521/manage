@@ -158,6 +158,6 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectWorkPlace" resultMap="BaseResultMap">
-       select * from work_place
+       select * from work_place where del_flag = 0
   </select>
 </mapper>
