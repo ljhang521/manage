@@ -2,13 +2,11 @@ package cn.edu.upc.xjs.controller;
 
 
 import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.ViewGroupUser;
 import cn.edu.upc.xjs.service.ProjectServiceXJS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +21,12 @@ public class ProjectControllerXJS {
     @ResponseBody
     public CommonReturnType getProjectList() {
         List<String> list = projectServiceXJS.getProjectName();
+        return CommonReturnType.create(list);
+    }
+    @RequestMapping("/getGroupList")
+    @ResponseBody
+    public CommonReturnType getGroupList(@RequestBody ViewGroupUser group) {
+        List<ViewGroupUser> list = projectServiceXJS.getGroupUser(group.getProjectId());
         return CommonReturnType.create(list);
     }
 

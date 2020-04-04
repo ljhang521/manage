@@ -18,6 +18,21 @@ public interface ViewGroupUserMapper {
      * @return
      */
     List<ViewGroupUser> selectByPrimaryKey(Integer id);
+    /**
+     * 获取某个项目小组信息
+     *
+     * @param ProjectId
+     * @return
+     */
+    List<ViewGroupUser> getGroupUser(Integer ProjectId);
+    /**
+     * 获取项目小组信息
+     *
+     * @param projectId
+     * @return
+     */
+
+
 
     /**
      * 获取某个项目小组信息

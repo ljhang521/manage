@@ -16,7 +16,7 @@ import java.util.List;
  * @author gsl
  * @date
  */
-@Service("projectService2")
+@Service("projectServiceGSL")
 public class ProjectServiceGSLImpl implements ProjectServiceGSL {
 
 
@@ -31,7 +31,7 @@ public class ProjectServiceGSLImpl implements ProjectServiceGSL {
      * 根据项目名称返回对应的项目列表
      *
      * @param projectName 项目名称
-     * @return 
+     * @return
      */
     @Override
     public List<Project> selectProjectList(String projectName) {

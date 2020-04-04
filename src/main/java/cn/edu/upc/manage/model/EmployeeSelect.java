@@ -461,4 +461,28 @@ public class EmployeeSelect {
             this.operatorTime = operatorTime;
         }
 
+        public String getWorkPlaceName() {
+                return workPlaceName;
+        }
+
+        public void setWorkPlaceName(String workPlaceName) {
+                this.workPlaceName = workPlaceName;
+        }
+
+        public String getTechnologyName() {
+                return technologyName;
+        }
+
+        public void setTechnologyName(String technologyName) {
+                this.technologyName = technologyName;
+        }
+
+        public String getRoleName() {
+                return roleName;
+        }
+
+        public void setRoleName(String roleName) {
+                this.roleName = roleName;
+        }
+
 }

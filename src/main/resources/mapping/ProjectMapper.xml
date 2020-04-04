@@ -265,6 +265,6 @@
     and project_name like concat('%',#{projectName,jdbcType=VARCHAR},'%')
   </select>
     <select id="getProjectName" resultType="java.lang.String">
-    select project_name from project
+    select * from project
  </select>
 </mapper>

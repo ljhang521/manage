@@ -47,7 +47,16 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false"/>-->
+<<<<<<< HEAD
         <table tableName="work_place" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false"/>
+=======
+        <!--<table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false"/>-->
+<!--        <table tableName="technology" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
+        <!--<table tableName = "work_place" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+                <!--enableUpdateByExample="false"/>-->
+>>>>>>> 80870b6f1a9b5a21a03c68a984d63312de6a70b6
     </context>
 </generatorConfiguration>

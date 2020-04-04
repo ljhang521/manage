@@ -201,6 +201,7 @@
         from group_ex
         where del_flag = 0
         and project_id = #{projectId,jdbcType=INTEGER}
+        and group_name = #{groupName,jdbcType=VARCHAR}
     </select>
     <update  id="updateDel" parameterType="cn.edu.upc.manage.model.GroupEx">
     update group_ex

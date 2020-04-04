@@ -1,7 +1,10 @@
 package cn.edu.upc.xjs.controller;
 
+import cn.edu.upc.dzw.service.ProjectServiceDZW;
 import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.manage.model.Progress;
+import cn.edu.upc.manage.model.ViewGroupUser;
+import cn.edu.upc.manage.model.ViewGroupUserGrouser;
 import cn.edu.upc.xjs.service.ProgressServiceXJS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +17,12 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/project", method = {RequestMethod.POST, RequestMethod.GET})
 public class ProgressControllerXJS {
+
+
     @Autowired
     private ProgressServiceXJS progressService;
+
+
 
     @RequestMapping("/getProgressList1")
     @ResponseBody
