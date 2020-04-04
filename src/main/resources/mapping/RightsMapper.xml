@@ -211,7 +211,7 @@
 
   <!-- 刘宁-->
   <select id="selectAllRightsLN" resultMap="RightsSetMap">
-    select * from view_rights WHERE del_flag = 0
+    select * from view_rights WHERE (del_flag = 0 and id!=0)
   </select>
   <select id="selectByPrimaryKeyLN" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--
