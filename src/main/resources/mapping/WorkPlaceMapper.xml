@@ -24,7 +24,7 @@
     id, work_place, creat_time, del_flag, operator, operator_ip, operator_time
   </sql>
   <select id="selectWorkPlaceList" resultMap="BaseResultMap">
-    select * from work_place
+    select * from work_place where del_flag=0 and work_place is not null
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--
@@ -36,6 +36,8 @@
     <include refid="Base_Column_List" />
     from work_place
     where id = #{id,jdbcType=INTEGER}
+    <!-- 判空,切记：每条查询语句都要判空-->
+    and del_flag=0
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
