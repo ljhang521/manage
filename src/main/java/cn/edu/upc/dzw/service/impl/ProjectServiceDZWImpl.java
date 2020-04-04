@@ -180,10 +180,17 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
 //            groupExNewList.add(groupExNew);
 //        }
         List<ViewGroupUser> groupUserList = viewGroupUserMapper.selectByPrimaryKey(id);
+        List<ViewGroupUserNew> groupUserNewList = new ArrayList<>();
+
+        for (int i = 0; i < groupUserList.size(); i++) {
+            ViewGroupUserNew viewGroupUserNew = viewGroupUserMapper.getProjectDetail(groupUserList.get(i).getProjectId(),
+                    groupUserList.get(i).getGroupId(), groupUserList.get(i).getUserId());
+            groupUserNewList.add(viewGroupUserNew);
+        }
 
         projectDetail.setProgressList(progressList);
         projectDetail.setProjectInfo(project);
-        projectDetail.setGroupList(groupUserList);
+        projectDetail.setGroupList(groupUserNewList);
         return projectDetail;
     }
 

@@ -12,7 +12,7 @@ public class ProjectDetail {
 
     private List<Progress> progressList;
     private ViewProject projectInfo;
-    private List<ViewGroupUser> groupList;
+    private List<ViewGroupUserNew> groupList;
 
     public List<Progress> getProgressList() {
         return progressList;
@@ -30,11 +30,11 @@ public class ProjectDetail {
         this.projectInfo = projectInfo;
     }
 
-    public List<ViewGroupUser> getGroupList() {
+    public List<ViewGroupUserNew> getGroupList() {
         return groupList;
     }
 
-    public void setGroupList(List<ViewGroupUser> groupList) {
+    public void setGroupList(List<ViewGroupUserNew> groupList) {
         this.groupList = groupList;
     }
 }

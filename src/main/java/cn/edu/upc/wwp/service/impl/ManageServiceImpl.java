@@ -15,7 +15,8 @@ public class ManageServiceImpl implements ManageService {
     ManageMapper manageMapper;
 
     @Override
-    public List<Manage> selectTechnology() {
+    public List<Manage> selectTechnology()
+    {
         return manageMapper.manageSelect();
     }
 
@@ -28,7 +29,8 @@ public class ManageServiceImpl implements ManageService {
 
     @Override
     public void insertTechnology(Manage record) {
-        manageMapper.insert(record);
+        record.setOperator("test");
+        manageMapper.insertSelective(record);
     }
 
     @Override
@@ -37,7 +39,10 @@ public class ManageServiceImpl implements ManageService {
         if (result!= null){
             manage.setDelFlag(1);
             manageMapper.updateByPrimaryKeySelective(manage);
+
         }
+
+
     }
 
 

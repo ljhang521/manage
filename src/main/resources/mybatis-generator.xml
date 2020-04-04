@@ -28,9 +28,28 @@
         </javaClientGenerator>
         <!-- 相关表的配置 -->
 
-<!--        <table tableName="view_tasks" enableCountByExample="false" enableDeleteByExample="false"-->
-<!--               enableSelectByExample="false" enableUpdateByExample="false"/>-->
-
+        <!--<table tableName="view_message_state" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="message" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="progress" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="work_place" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="group_ex" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="group_user" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="manage" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="area" enableCountByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <!--<table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false"/>-->
+<!--        <table tableName="technology" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               enableUpdateByExample="false"/>-->
 
     </context>
 </generatorConfiguration>
