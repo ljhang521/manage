@@ -177,7 +177,7 @@ public class TeamController {
             lm.put("groupList",GroupList);
         }*/
         LinkedHashMap<String,Object> organizationStructure = dataHandling(technologys);
-        return CommonReturnType.create(technologys);
+        return CommonReturnType.create(organizationStructure);
     }
 
     public LinkedHashMap<String,Object> dataProcessing(List<LinkedHashMap<String,Object>> data){
