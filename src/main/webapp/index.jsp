@@ -25,7 +25,7 @@
         }
     });
     // 使用
-    require(
+        require(
         [
             'echarts',
             'echarts/chart/tree' // 使用树状图就加载tree模块，按需加载

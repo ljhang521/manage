@@ -1,5 +1,6 @@
 package cn.edu.upc.ln.controller;
 
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.ln.service.PriManageService;
 import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.manage.model.PrivilegeManage;
@@ -50,5 +51,12 @@ public class PrivilegeController {
         p3.setDelFlag(1);
         priManageService.updatePrivilege(p3);
         return CommonReturnType.create(null,null,0,"删除成功");
+    }
+
+    @RequestMapping("/selectRightByRole")
+    @ResponseBody
+    public CommonReturnType selectRightByRole(){
+        List<RightsSetLN> p1 = priManageService.selectRightByRole(SysUser.getCurrentUserRole());
+        return CommonReturnType.create(p1);
     }
 }

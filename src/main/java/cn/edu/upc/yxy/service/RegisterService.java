@@ -5,8 +5,6 @@ import cn.edu.upc.manage.model.User;
 
 public interface RegisterService {
     public void insertUser(User user);
-    public void changePasswordByEmail(String newPassword, String email);
-    public User selectByEmail(String email);
+    public User selectByUsername(String username);
 
-    User selectByUserName(User user);
 }

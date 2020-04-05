@@ -211,7 +211,7 @@
 
   <!-- 刘宁-->
   <select id="selectAllRightsLN" resultMap="RightsSetMap">
-    select * from view_rights WHERE del_flag = 0
+    select * from view_rights WHERE (del_flag = 0 and id!=0)
   </select>
   <select id="selectByPrimaryKeyLN" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--
@@ -223,5 +223,9 @@
     <include refid="Base_Column_List" />
     from rights
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectRightByRole" resultMap="RightsSetMap">
+    select * from view_rights where id in(
+    select right_id from right_role where role_id=#{roleId}) and (del_flag = 0 and id!=0)
   </select>
 </mapper>
