@@ -61,4 +61,5 @@ public interface RightsMapper {
     /**---------------------刘宁--------------------- */
     List<RightsSetLN> selectAllRightsLN();
     Rights selectByPrimaryKeyLN(Long id);
+    List<RightsSetLN> selectRightByRole(Integer roleId);
 }

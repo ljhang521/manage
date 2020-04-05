@@ -11,4 +11,5 @@ public interface PriManageService {
     public void insertNewPrivilege(Rights rights);
     public Rights selectPrivilegeManage(long id);
     public void updatePrivilege(Rights privilegeManage);
+    public List<RightsSetLN> selectRightByRole(Integer roleId);
 }
