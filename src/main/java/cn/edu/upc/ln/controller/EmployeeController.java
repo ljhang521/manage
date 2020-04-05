@@ -3,10 +3,7 @@ package cn.edu.upc.ln.controller;
 import cn.edu.upc.ljh.service.UserService;
 import cn.edu.upc.ln.service.EmployeeManageService;
 import cn.edu.upc.manage.common.CommonReturnType;
-import cn.edu.upc.manage.model.EmployeeSelect;
-import cn.edu.upc.manage.model.EmployeeSelectInput;
-import cn.edu.upc.manage.model.Test;
-import cn.edu.upc.manage.model.User;
+import cn.edu.upc.manage.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -49,5 +46,13 @@ public class EmployeeController {
         userService.updateUser(user);
         return CommonReturnType.create(null,null,0,"更新成功");
     }
+    @RequestMapping("/changePassword")
+    @ResponseBody
+    public CommonReturnType changePassWord(@RequestBody ChangePassword para)
+    {
+        employeeManageService.changePassWord(para.getPassword(),para.getId());
+        return CommonReturnType.create(null,null,0,"修改成功");
+    }
+
 
 }

@@ -12,22 +12,16 @@ import javax.annotation.Resource;
 public class RegisterServiceImpl implements RegisterService {
     @Resource
     private UserMapper userMapper;
+
     @Override
     public void insertUser(User user) {
         userMapper.insertSelective(user);
     }
-    @Transactional
-    @Override
-    public void changePasswordByEmail(String newPassword, String email){
-        userMapper.changePasswordByEmail(newPassword,email);
-    }
 
     @Override
-    public User selectByEmail(String email){
-        return userMapper.selectByEmail(email);
+    public User selectByUsername(String username) {
+        return userMapper.selectByUsername(username);
     }
-    @Override
-    public User selectByUserName(User user){
-        return userMapper.selectByUserName(user);
-    }
+
+
 }

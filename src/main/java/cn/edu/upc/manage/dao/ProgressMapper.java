@@ -13,6 +13,7 @@ public interface ProgressMapper {
     int  updateDelete(Progress delete);
     /*  修改项目进度——焦点聚焦及失去onChange输入*/
     int updateByPrimaryKeySelect(Progress change);
+
     /**
      * 选取某项目下所有小组
      *

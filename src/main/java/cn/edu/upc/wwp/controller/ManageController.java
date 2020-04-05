@@ -16,7 +16,7 @@ import java.util.List;
 public class ManageController {
     @Autowired
     public ManageService manageService;
-    @RequestMapping("/setTechnology")
+    @RequestMapping("/selectTechnology")
 
     @ResponseBody
     public CommonReturnType select(){

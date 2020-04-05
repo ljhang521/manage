@@ -1,12 +1,15 @@
 package cn.edu.upc.ln.service;
 
-import cn.edu.upc.manage.model.RolerManage;
+import cn.edu.upc.manage.model.*;
 
 import java.util.List;
 
 public interface RolerManageService {
-    public List<RolerManage> selectAllRoler();
-    public void insertNewRoler(RolerManage rolerManage);
-    public void updateRoler(RolerManage rolerManage);
-    public RolerManage selectRolerManage(long id);
+    public List<ViewRightsRole> selectAllRoler();
+    public int insertNewRole(Role role);
+    public void insertNewRightRole(RightRole rightRole);
+    public void deleteRightRole(long id);
+    public void delete(long id);
+    public List<RightRole> selectByRoleId(long id);
+    public void updateRoleName(RightRoleInput rightRoleInput);
 }

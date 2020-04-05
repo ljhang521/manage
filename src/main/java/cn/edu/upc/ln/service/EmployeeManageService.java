@@ -8,4 +8,5 @@ import java.util.List;
 public interface EmployeeManageService {
     public List <EmployeeSelect> selectAllEmployee();
     public EmployeeSelect selectEmployee(EmployeeSelectInput employeeSelectInput);
+    public void changePassWord(String password,String id);
 }

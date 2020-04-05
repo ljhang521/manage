@@ -1,9 +1,9 @@
 package cn.edu.upc.zy.controller;
 
-import cn.edu.upc.whn.service.TestService;
-import cn.edu.upc.zy.service.MessageService;
 import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.manage.model.Message;
+import cn.edu.upc.manage.model.ViewMessageState;
+import cn.edu.upc.zy.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class MessageController {
     @Autowired
    private MessageService messageService;
-    @Autowired
-    TestService testService;
 
     @RequestMapping("/insertNewMessage")
     @ResponseBody
@@ -26,13 +24,13 @@ public class MessageController {
     }
     @RequestMapping("/getList")
     @ResponseBody
-    public CommonReturnType getList(@RequestParam("id") Integer id){
-        return CommonReturnType.create(testService.getMessageList(id));
+    public CommonReturnType getList(@RequestBody ViewMessageState message){
+        return CommonReturnType.create(messageService.getMessageList(message));
     }
     @RequestMapping("/updateReader")
     @ResponseBody
-    public CommonReturnType updateReader(@RequestParam("id") int id,@RequestParam("uid") int uid){
-        testService.updateReader(id,uid);
+    public CommonReturnType updateReader(@RequestBody ViewMessageState message){
+        messageService.updateReader(message);
         return CommonReturnType.create(null);
     }
 }
