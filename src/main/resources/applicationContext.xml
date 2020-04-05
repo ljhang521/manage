@@ -120,7 +120,7 @@
         <property name="exceptionMappings">
             <props>
                 <!-- 无权限跳转到登陆页，可自行定义 -->
-                <prop key="org.apache.shiro.authz.UnauthorizedException">/ssm/home</prop>
+                <prop key="org.apache.shiro.authz.UnauthorizedException">/forgetPassword</prop>
             </props>
         </property>
     </bean>

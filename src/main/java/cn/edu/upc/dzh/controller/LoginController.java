@@ -64,7 +64,9 @@ public class LoginController {
         UsernamePasswordToken token = new UsernamePasswordToken(loginName,password);
         Map<String,Object> returnMsg = new HashMap<String, Object>();
         try {
+
             subject.login(token);
+            SecurityUtils.getSubject().getSession().setTimeout(10000);
             returnMsg.put("loginTips","登陆成功");
             System.out.println("返回权限1");
             returnMsg.put("userType",SysUser.getCurrentUserRole());
