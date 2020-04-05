@@ -50,15 +50,26 @@ public class ProjectServiceGSLImpl implements ProjectServiceGSL {
 
             if (workPlaceId != null) {
                 WorkPlace workPlace = workPlaceMapper.selectByPrimaryKey(workPlaceId);
-                String workPlaceName = workPlace.getWorkPlace();
-                eachProject.setWorkPlaceName(workPlaceName);
-            }else {
+                //增加判空，因为有可能出现虽然在project表里有此worePlaceId,
+                // 但在work_place表里的del_flag != 0（即已被软删除）的情况
+                if (workPlace != null) {
+                    String workPlaceName = workPlace.getWorkPlace();
+                    eachProject.setWorkPlaceName(workPlaceName);
+                } else {
+                    eachProject.setWorkPlaceName("空");
+                }
+            } else {
                 eachProject.setWorkPlaceName("暂无");
             }
             if (managerId != null) {
                 User manager = userMapper.selectByPrimaryKey(managerId);
-                eachProject.setManagerName(manager.getRealName());
-            }else{
+                //增加判空
+                if (manager != null) {
+                    eachProject.setManagerName(manager.getRealName());
+                } else {
+                    eachProject.setManagerName("空");
+                }
+            } else {
                 eachProject.setManagerName("暂无");
             }
         }
