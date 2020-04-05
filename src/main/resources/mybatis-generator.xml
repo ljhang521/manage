@@ -49,5 +49,6 @@
                <!--enableUpdateByExample="false"/>-->
         <!--<table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false"/>-->
+        <!--table tableName="view_group_user2" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"/-->
     </context>
 </generatorConfiguration>

@@ -37,13 +37,19 @@ public class GroupExControllerXJS {
         List<GroupEx> list = groupExServiceXJS.selectGroupEx();
         return CommonReturnType.create(list);
     }
+    @RequestMapping("/getGroupInfo")
+    @ResponseBody
+    public CommonReturnType getGroupList(@RequestBody GroupEx group) {
+        List<GroupEx> list = groupExServiceXJS.getGroup(group.getProjectId());
+        return CommonReturnType.create(list);
+    }
 
     @RequestMapping("/deleteGroup")
     @ResponseBody
     public CommonReturnType deleter(@RequestBody  GroupEx group) {
         groupExServiceXJS.deleteGroupEx(group);
-        List<ViewGroupUser> l = projectServiceXJS.getGroupUser(group.getProjectId());
-        return CommonReturnType.create(l,"删除成功");
+        List<GroupEx> list = groupExServiceXJS.getGroup(group.getProjectId());
+        return CommonReturnType.create(list,"删除成功");
     }
     @RequestMapping("/deleteGroupUser")
     @ResponseBody

@@ -34,6 +34,10 @@ public class GroupExServiceXJSImpl implements GroupExServiceXJS {
     public List<GroupEx> selectGroupEx() {
         return GroupExmapper.selectByPrimaryKey();
     }
+    @Override
+    public List<GroupEx> getGroup(Integer projectId) {
+        return GroupExmapper.getGroup(projectId);
+    }
 
     @Override
     public int deleteGroupEx(GroupEx group) {

@@ -28,6 +28,12 @@ public interface GroupExServiceXJS {
      * @return
      */
     List<GroupEx> selectGroupEx();
+    /**
+     * 根据projectId显示小组内容
+     *
+     * @return projectId
+     */
+    List<GroupEx> getGroup(Integer projectId);
 
     /**
      * 根据id值删除小组，实际是为del_flag赋值为id值
