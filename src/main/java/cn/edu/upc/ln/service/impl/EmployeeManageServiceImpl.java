@@ -18,4 +18,5 @@ public class EmployeeManageServiceImpl implements EmployeeManageService {
         return userMapper.selectAll();
     }
     public EmployeeSelect selectEmployee(EmployeeSelectInput employeeSelectInput) { return userMapper.selectByName(employeeSelectInput);}
+    public void changePassWord(String password,String id){ userMapper.changePassword(password,id); }
 }

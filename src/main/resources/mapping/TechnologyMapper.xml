@@ -243,6 +243,23 @@
     and technology.p_id = #{technologyId}
   </select>
 
+  <resultMap id="userFieldPosition" type="java.util.LinkedHashMap">
+    <result column="real_name" jdbcType="INTEGER" property="real_name" />
+    <result column="field_position" jdbcType="VARCHAR" property="field_position" />
+  </resultMap>
+
+  <select id="selectUserForTechnology" parameterType="int" resultMap="userFieldPosition">
+    SELECT
+        `user`.real_name,
+        `user`.field_position
+    FROM
+        `user`
+    WHERE
+        `user`.field_position &lt;&gt; 'null'  AND
+        `user`.del_flag =  '0' AND
+        `user`.technology =  5
+  </select>
+
   <select id="technologySelect" resultMap="BaseResultMap">
       select * from technology where del_flag=0
   </select>

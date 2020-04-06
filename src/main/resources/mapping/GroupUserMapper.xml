@@ -188,4 +188,12 @@
         select * from group_user
         where group_id = #{groupId,jdbcType=INTEGER} and user_id = #{userId,jdbcType=INTEGER}
     </select>
+    <update  id="groupDel" parameterType="cn.edu.upc.manage.model.GroupUser">
+    update group_user
+    set  del_flag = #{delFlag,jdbcType=INTEGER},
+        operator = #{operator,jdbcType=VARCHAR},
+        operator_ip = #{operatorIp,jdbcType=VARCHAR},
+        operator_time = #{operatorTime,jdbcType=TIMESTAMP}
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
 </mapper>
