@@ -27,4 +27,8 @@ public class PriManageServiceImpl implements PriManageService {
     public void updatePrivilege(Rights rights){
         rightsMapper.updateByPrimaryKeySelective(rights);
     }
+    @Override
+    public List<RightsSetLN> selectRightByRole(Integer roleId){
+        return rightsMapper.selectRightByRole(roleId);
+    }
 }

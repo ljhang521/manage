@@ -255,9 +255,9 @@
     FROM
         `user`
     WHERE
-        `user`.field_position &lt;&gt; 'null'  AND
         `user`.del_flag =  '0' AND
-        `user`.technology =  5
+        `user`.field_position &lt;&gt; 'null' AND
+        `user`.technology =  #{technologyIdSecond}
   </select>
 
   <select id="technologySelect" resultMap="BaseResultMap">

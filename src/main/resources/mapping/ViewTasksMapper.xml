@@ -128,14 +128,14 @@
       </if>
     </trim>
   </insert>
-<!--  where user_id = #{loginId}-->
-<!--  INTEGER loginId = SysUser.getCurrentUserId();-->
-  <select id="getTasksList" resultMap="BaseResultMap">
 
+
+  <select id="getTasksList" resultMap="BaseResultMap">
+  INTEGER loginId = SysUser.getCurrentUserId();
     select
     *
     from view_tasks
-
+  where user_id = #{loginId}
 
 
   </select>

@@ -1,8 +1,8 @@
 package cn.edu.upc.wjw.controller;
 
 import cn.edu.upc.manage.common.CommonReturnType;
-import cn.edu.upc.manage.model.Role;
 
+import cn.edu.upc.manage.model.Role;
 import cn.edu.upc.wjw.service.impl.RoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

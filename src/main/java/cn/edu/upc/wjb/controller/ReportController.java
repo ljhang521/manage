@@ -19,11 +19,11 @@ public class ReportController {
     public CommonReturnType select(@RequestBody Report report){
         return CommonReturnType.create(reportService.getListByParam(report.getProjectId(),report.getGroupId(),report.getEmployeeId()));
     }
-    @RequestMapping("/getProjectReportChickList")
-    @ResponseBody
-    public CommonReturnType checkSelect(@RequestParam(value = "pid") int pid, @RequestParam(value = "gid") int gid, @RequestParam(value = "eid") int eid){
-        return CommonReturnType.create(reportService.getListByParam(pid,gid,eid));
-    }
+//    @RequestMapping("/getProjectReportChickList")
+//    @ResponseBody
+//    public CommonReturnType checkSelect(@RequestParam(value = "pid") int pid, @RequestParam(value = "gid") int gid, @RequestParam(value = "eid") int eid){
+//        return CommonReturnType.create(reportService.getListByParam(pid,gid,eid));
+//    }
 
     @RequestMapping("/insertProjectReportList")
     @ResponseBody

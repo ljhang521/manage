@@ -31,9 +31,9 @@ public class RegisterController {
     }
     @ResponseBody
     @RequestMapping(value = "/selectusername",method = RequestMethod.POST)
-    public CommonReturnType selectusername(@RequestBody String username){
-        User user = registerService.selectByUsername(username);
-        if(registerService.selectByUsername(username) != null) {
+    public CommonReturnType selectusername(@RequestBody User record){
+       // User user = registerService.selectByUsername(record.getUserName());
+        if(registerService.selectByUsername(record.getUserName()) != null) {
             return CommonReturnType.create("用户名已存在");
         }
         else{
