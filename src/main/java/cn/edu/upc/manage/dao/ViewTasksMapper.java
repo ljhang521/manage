@@ -20,5 +20,5 @@ public interface ViewTasksMapper {
      * @mbg.generated Wed Mar 18 16:11:23 CST 2020
      */
     int insertSelective(ViewTasks record);
-    List<ViewTasks> getTasksList();
+    List<ViewTasks> getTasksList( Integer loginId);
 }
