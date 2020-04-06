@@ -131,7 +131,7 @@
 
 
   <select id="getTasksList" resultMap="BaseResultMap">
-  INTEGER loginId = SysUser.getCurrentUserId();
+
     select
     *
     from view_tasks

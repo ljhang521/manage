@@ -1,5 +1,6 @@
 package cn.edu.upc.wjb.service.impl;
 
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.manage.dao.ViewTasksMapper;
 import cn.edu.upc.manage.model.ViewTasks;
 import cn.edu.upc.wjb.service.ViewTasksService;
@@ -15,7 +16,8 @@ public class ViewTasksServiceImpl implements ViewTasksService {
 
     @Override
     public List<ViewTasks> getTasksList() {
-        List<ViewTasks> list = viewTasksMapper.getTasksList();
+        Integer loginId = SysUser.getCurrentUserId();
+        List<ViewTasks> list = viewTasksMapper.getTasksList(loginId);
         return list;
     }
 }
