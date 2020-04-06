@@ -31,6 +31,7 @@ public class ProjectServiceXJSImpl implements ProjectServiceXJS {
    }
     @Override
     public  List<ViewGroupUser2>getGroupPerson(Integer projectId){
+
         return  ViewGroupUser2Mapper.getGroupPerson(projectId);
     }
 }
