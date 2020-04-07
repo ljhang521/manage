@@ -4,6 +4,7 @@ package cn.edu.upc.xjs.service;
 import cn.edu.upc.manage.model.GroupEx;
 import cn.edu.upc.manage.model.GroupUser;
 import cn.edu.upc.manage.model.ViewGroupUser;
+import cn.edu.upc.manage.model.ViewGroupUser2;
 
 import java.util.List;
 
@@ -43,4 +44,5 @@ public interface GroupExServiceXJS {
      */
     int deleteGroupUser(GroupUser groupUser);
     int deleteGroupEx(GroupEx group);
+    List<ViewGroupUser2> getGroupUsers(ViewGroupUser2 record);
 }

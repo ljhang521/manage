@@ -14,6 +14,8 @@ public interface ViewGroupUser2Mapper {
      * @mbg.generated Sun Apr 05 17:16:10 CST 2020
      */
     List<ViewGroupUser2> getGroupPerson(Integer projectId);
+    List<ViewGroupUser2> getGroupPersonType(@Param("record") ViewGroupUser2 record);
+    List<ViewGroupUser2> getGroupUsers(@Param("record") ViewGroupUser2 record);
     int insert(ViewGroupUser2 record);
 
     /**

@@ -193,7 +193,34 @@
     </if>
   </update>
   <select id="getGroupPerson"   parameterType="java.lang.Integer"   resultMap="BaseResultMap">
-        SELECT *  FROM  view_group_user2
+        SELECT distinct id,project_id,group_name FROM  view_group_user2
         where project_id=#{projectId} and del_flag=0
   </select>
+  <select id="getGroupPersonType"   parameterType="map"   resultMap="BaseResultMap">
+        SELECT *  FROM  view_group_user2
+        where project_id=#{record.projectId,jdbcType=INTEGER}
+            and id=#{record.id,jdbcType=INTEGER}
+            and user_type=#{record.userType,jdbcType=INTEGER}
+            and del_flag=0
+  </select>
+  <select id="getGroupUsers"   parameterType="map"   resultMap="BaseResultMap">
+        SELECT
+          view_group_user2.id as id,
+          view_group_user2.project_id,
+          view_group_user2.group_name,
+          `user`.id as user_id,
+          view_group_user2.user_type as user_type,
+          `user`.real_name,
+          view_group_user2.content,
+          view_group_user2.del_flag,
+          view_group_user2.group_user_id
+        FROM
+        `user`
+        left Join (
+                select * from view_group_user2 where project_id=#{record.projectId,jdbcType=INTEGER}
+                                                    and id=#{record.id,jdbcType=INTEGER}
+                ) as view_group_user2
+            ON `user`.id = view_group_user2.user_id
+  </select>
+
 </mapper>
