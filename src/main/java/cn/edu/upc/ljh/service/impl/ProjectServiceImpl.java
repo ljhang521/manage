@@ -1,5 +1,6 @@
 package cn.edu.upc.ljh.service.impl;
 
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.manage.dao.ProjectMapper;
 import cn.edu.upc.manage.model.Project;
 import cn.edu.upc.ljh.service.ProjectService;
@@ -19,8 +20,10 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public List<Project> selectByManager() {
-        int managerId=2; //session获取
-        return projectMapper.selectByManager(managerId);
+        //int managerId=2; //session获取
+        Integer loginId = SysUser.getCurrentUserId();
+        System.out.println(loginId);
+        return projectMapper.selectByManager(loginId);
     }
 
     @Override

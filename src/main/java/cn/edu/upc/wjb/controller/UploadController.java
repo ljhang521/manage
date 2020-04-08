@@ -39,7 +39,7 @@ public class UploadController {
     //实现报告上传
     @RequestMapping(value = "/uploadReport",method = {RequestMethod.POST} )
     @ResponseBody
-    public CommonReturnType reportUpload(@RequestParam("file")MultipartFile file) throws IOException {
+    public CommonReturnType reportUpload(@RequestParam("file") MultipartFile file) throws IOException {
         String name = uploadFile(file,"report");
         return CommonReturnType.create(name);
     }
