@@ -20,8 +20,8 @@ public class ProgressController {
 
     @RequestMapping("/getProgressList")
     @ResponseBody
-    public CommonReturnType getProjectList(@RequestBody Progress progress) {
-        if(progress.getProjectId()==0){progress.setProjectId(1);}
+    public CommonReturnType getProgressList(@RequestBody Progress progress) {
+       // if(progress.getProjectId()==0){progress.setProjectId(1);}
         List<Progress> p=progressService.selectByProjectId(progress.getProjectId());
         return CommonReturnType.create(p);
     }

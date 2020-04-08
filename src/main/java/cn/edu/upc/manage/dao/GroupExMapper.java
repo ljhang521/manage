@@ -16,6 +16,8 @@ public interface GroupExMapper {
     List<GroupEx> selectGroup(Integer projectId);
     /*  显示小组所有数据  */
     List<GroupEx> selectByPrimaryKey();
+    /*  根据projectId查询groupEx  */
+    List<GroupEx> getGroup(Integer projectId);
     /*  修改小组名称，修改完自动显示数据  */
     List<GroupEx> updateByPrimaryKeySelect(GroupEx changName);
     /*  删除小组，做update操作，del_flag赋值为它的id值  */
