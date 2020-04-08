@@ -1,9 +1,13 @@
 package cn.edu.upc.wjb.controller;
 
 import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.Report;
+import org.apache.commons.io.IOUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
 /**
@@ -59,4 +63,48 @@ public class UploadController {
         return filename;
     }
     //实现文件下载
+    @RequestMapping(value = "/downloadFileEx",method ={RequestMethod.POST,RequestMethod.GET})
+    public static void downloadExcelModle(HttpServletResponse response, @RequestBody Report report) {
+        //下载
+        File file = new File("D:/apache-tomcat-7.0.100-windows-x64/apache-tomcat-7.0.100/bin/upload/report/"+report.getDocument());//   1.获取要下载的文件的绝对路径
+//        File file = new File(fileName);//   1.获取要下载的文件的绝对路径
+        String newDname = report.getDocument();     //2.获取要下载的文件名
+        System.out.println(report.getDocument());
+        if (file.exists()) {  //判断文件是否存在
+            response.setHeader("content-type", "application/octet-stream");
+            response.setContentType("application/xlsx");
+            try {
+                response.setHeader("Content-Disposition", "attachment;filename=" + new String(newDname
+                        .getBytes("UTF-8"), "ISO8859-1"));  //3.设置content-disposition响应头控制浏览器以下载的形式打开文件.特别注意，在swagger中会练吗，
+                // 但是其实不会乱码。
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            byte[] buff = new byte[1024];    //5.创建数据缓冲区
+            BufferedInputStream bis = null;
+            OutputStream os = null;
+            OutputStream outputStream = null;
+            try {
+                FileInputStream inputStream = new FileInputStream(file);
+                outputStream = response.getOutputStream();
+                IOUtils.copy(inputStream, outputStream);
+                response.flushBuffer();
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (outputStream != null) {
+                    try {
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        else
+        {
+            System.out.println("1");
+        }
+    }
 }
