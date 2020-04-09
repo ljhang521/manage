@@ -67,9 +67,11 @@ public class UploadController {
     //实现文件下载
     @RequestMapping(value = "/downloadFileEx",method ={RequestMethod.POST,RequestMethod.GET})
 
-    public static void downloadExcelModle(HttpServletResponse response,  @RequestParam(name = "name") String fileName) {
+    public static void downloadExcelModle(HttpServletResponse response,HttpServletRequest request,  @RequestParam(name = "name") String fileName) {
         //下载
-        File file = new File("upload/report/"+fileName);//   1.获取要下载的文件的绝对路径
+        String path=request.getSession().getServletContext().getRealPath("/upload");
+
+        File file = new File(path+"/report/"+fileName);//   1.获取要下载的文件的绝对路径
         String newDname = fileName;     //2.获取要下载的文件名
         System.out.println(fileName);
         if (file.exists()) {  //判断文件是否存在
@@ -82,9 +84,6 @@ public class UploadController {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-            byte[] buff = new byte[1024];    //5.创建数据缓冲区
-            BufferedInputStream bis = null;
-            OutputStream os = null;
             OutputStream outputStream = null;
             try {
                 FileInputStream inputStream = new FileInputStream(file);
