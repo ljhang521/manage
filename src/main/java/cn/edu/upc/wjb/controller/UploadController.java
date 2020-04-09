@@ -64,12 +64,12 @@ public class UploadController {
     }
     //实现文件下载
     @RequestMapping(value = "/downloadFileEx",method ={RequestMethod.POST,RequestMethod.GET})
-    public static void downloadExcelModle(HttpServletResponse response, @RequestBody Report report) {
+    public static void downloadExcelModle(HttpServletResponse response,  @RequestParam(name = "name") String fileName) {
         //下载
-        File file = new File("D:/apache-tomcat-7.0.100-windows-x64/apache-tomcat-7.0.100/bin/upload/report/"+report.getDocument());//   1.获取要下载的文件的绝对路径
+        File file = new File("D:/apache-tomcat-7.0.100-windows-x64/apache-tomcat-7.0.100/bin/upload/report/"+fileName);//   1.获取要下载的文件的绝对路径
 //        File file = new File(fileName);//   1.获取要下载的文件的绝对路径
-        String newDname = report.getDocument();     //2.获取要下载的文件名
-        System.out.println(report.getDocument());
+        String newDname = fileName;     //2.获取要下载的文件名
+        System.out.println(fileName);
         if (file.exists()) {  //判断文件是否存在
             response.setHeader("content-type", "application/octet-stream");
             response.setContentType("application/xlsx");
