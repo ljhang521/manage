@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
@@ -19,7 +20,7 @@ import java.io.*;
 @CrossOrigin(allowCredentials = "true",allowedHeaders = "*")
 public class UploadController {
 
-//    @Bean
+    //    @Bean
 //    MultipartConfigElement multipartConfigElement() {
 //        MultipartConfigFactory factory = new MultipartConfigFactory();
 //        factory.setLocation("/tmp/tomcat");
@@ -28,33 +29,34 @@ public class UploadController {
     //实现图片上传
     @RequestMapping(value = "/uploadPicture",method = {RequestMethod.POST})
     @ResponseBody
-    public CommonReturnType pictureUpload(@RequestParam("file") MultipartFile file) throws IOException{
-        String name = uploadFile(file,"picture");
+    public CommonReturnType pictureUpload(@RequestParam("file") MultipartFile file,HttpServletRequest request) throws IOException{
+        String name = uploadFile(file,"picture",request);
         return CommonReturnType.create(name);
     }
     //实现视频上传
     @RequestMapping(value = "/uploadVideo",method = {RequestMethod.POST})
     @ResponseBody
-    public CommonReturnType videoUpload(@RequestParam("file")MultipartFile file) throws IOException{
-        String name = uploadFile(file,"video");
+    public CommonReturnType videoUpload(@RequestParam("file")MultipartFile file,HttpServletRequest request) throws IOException{
+        String name = uploadFile(file,"video",request);
         return CommonReturnType.create(name);
     }
 
     //实现报告上传
     @RequestMapping(value = "/uploadReport",method = {RequestMethod.POST} )
     @ResponseBody
-    public CommonReturnType reportUpload(@RequestParam("file") MultipartFile file) throws IOException {
-        String name = uploadFile(file,"report");
+    public CommonReturnType reportUpload(@RequestParam("file") MultipartFile file,HttpServletRequest request) throws IOException {
+        String name = uploadFile(file,"report",request);
         return CommonReturnType.create(name);
     }
 
-    public String uploadFile(MultipartFile file,String type) throws IOException{
+    public String uploadFile(MultipartFile file,String type,HttpServletRequest request) throws IOException{
         String fileName = file.getOriginalFilename();
-        File filed = new File("upload");
+        String path=request.getSession().getServletContext().getRealPath("/upload");
+        File filed = new File(path);
         if(!filed.exists()){
             filed.mkdir();
         }
-        File files = new File("upload/"+type);
+        File files = new File(path+"/"+type);
         if(!files.exists()){
             files.mkdir();
         }
@@ -64,10 +66,10 @@ public class UploadController {
     }
     //实现文件下载
     @RequestMapping(value = "/downloadFileEx",method ={RequestMethod.POST,RequestMethod.GET})
+
     public static void downloadExcelModle(HttpServletResponse response,  @RequestParam(name = "name") String fileName) {
         //下载
-        File file = new File("D:/apache-tomcat-7.0.100-windows-x64/apache-tomcat-7.0.100/bin/upload/report/"+fileName);//   1.获取要下载的文件的绝对路径
-//        File file = new File(fileName);//   1.获取要下载的文件的绝对路径
+        File file = new File("upload/report/"+fileName);//   1.获取要下载的文件的绝对路径
         String newDname = fileName;     //2.获取要下载的文件名
         System.out.println(fileName);
         if (file.exists()) {  //判断文件是否存在
