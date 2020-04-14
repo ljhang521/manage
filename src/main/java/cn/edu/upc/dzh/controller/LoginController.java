@@ -8,20 +8,24 @@ import cn.edu.upc.dzh.until.exception.BusinessException;
 import cn.edu.upc.dzh.until.exception.EmBusinessError;
 import cn.edu.upc.ljh.service.UserService;
 import cn.edu.upc.manage.common.CommonReturnType;
+import cn.edu.upc.manage.model.RightRole;
 import cn.edu.upc.manage.model.User;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import cn.edu.upc.ln.service.RolerManageService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -37,6 +41,8 @@ public class LoginController {
 //    private SysUser sysUser;
     @Autowired
     private SendEmailUtil sendEmailUtil;
+    @Autowired
+    private RolerManageService rolerManageService;
 
 
 
@@ -52,47 +58,101 @@ public class LoginController {
 //        //return CommonReturnType.create("123");
 //    }
 
+//    @RequestMapping("/login")
+//    @ResponseBody
+//    public CommonReturnType login(@RequestBody JSONObject user){
+//        String loginName=user.getString("loginName");
+//        String password= MD5Util.md5(user.getString("password"));
+//        //String password=MD5Util.md5(password2);
+//        System.out.println("1用户名和密码："+loginName+password);
+//        Subject subject = SecurityUtils.getSubject();
+//        System.out.println("2用户名和密码："+loginName+password);
+//        UsernamePasswordToken token = new UsernamePasswordToken(loginName,password);
+//        Map<String,Object> returnMsg = new HashMap<String, Object>();
+//        try {
+//            subject.login(token);
+//            SecurityUtils.getSubject().getSession().setTimeout(10000);
+//            returnMsg.put("loginTips","登陆成功");
+//            System.out.println("返回权限1");
+//            returnMsg.put("userType",SysUser.getCurrentUserRole());
+//            return CommonReturnType.create(returnMsg);
+//        }
+//        catch (UnknownAccountException e) {
+//            //用户不存在
+//            throw new BusinessException(EmBusinessError.STUDENT_NOT_EXIST);
+//        }
+//        catch (IncorrectCredentialsException e) {
+//            //密码不正确
+//            throw new BusinessException(EmBusinessError.STUDENT_LOGIN_FAIL);
+//        } catch (Exception e) {
+//            //未知异常UNKNOWN_ERROR
+//            throw new BusinessException(EmBusinessError.UNKNOWN_ERROR);
+//        }
+//    }
+
     @RequestMapping("/login")
     @ResponseBody
-    public CommonReturnType login(@RequestBody JSONObject user){
+    public CommonReturnType login(@RequestBody JSONObject user,HttpSession session){
         String loginName=user.getString("loginName");
         String password= MD5Util.md5(user.getString("password"));
         //String password=MD5Util.md5(password2);
         System.out.println("1用户名和密码："+loginName+password);
-        Subject subject = SecurityUtils.getSubject();
+//        Subject subject = SecurityUtils.getSubject();
         System.out.println("2用户名和密码："+loginName+password);
         UsernamePasswordToken token = new UsernamePasswordToken(loginName,password);
         Map<String,Object> returnMsg = new HashMap<String, Object>();
-        try {
+        User user1 = loginService.selectByUsername(loginName);
+        if(user1!=null){
+            if(user1.getPassword().equals(password)){
+                session.setAttribute("user",user1);
+                session.setMaxInactiveInterval(10);
+                returnMsg.put("loginTips","登陆成功");
+                System.out.println("返回权限1");
+                returnMsg.put("userType",SysUser.getCurrentUserRole(session));
+                return CommonReturnType.create(returnMsg);
+            }else{
+                throw new BusinessException(EmBusinessError.STUDENT_LOGIN_FAIL);
+            }
 
-            subject.login(token);
-            SecurityUtils.getSubject().getSession().setTimeout(10000);
-            returnMsg.put("loginTips","登陆成功");
-            System.out.println("返回权限1");
-            returnMsg.put("userType",SysUser.getCurrentUserRole());
-            return CommonReturnType.create(returnMsg);
-        } catch (UnknownAccountException e) {
-            //用户不存在
-            throw new BusinessException(EmBusinessError.STUDENT_LOGIN_FAIL);
-        } catch (IncorrectCredentialsException e) {
-            //密码不正确
-            throw new BusinessException(EmBusinessError.STUDENT_LOGIN_FAIL);
-        } catch (Exception e) {
-            //未知异常UNKNOWN_ERROR
-            throw new BusinessException(EmBusinessError.UNKNOWN_ERROR);
+        }else{
+            throw new BusinessException(EmBusinessError.STUDENT_NOT_EXIST);
         }
+
+
     }
 
-    @RequestMapping("/logout")
+
+
+    @RequestMapping("/sessionTest")
     @ResponseBody
-    public CommonReturnType logout(){
-
-
-        Subject subject = SecurityUtils.getSubject();
-        subject.logout();
-        return CommonReturnType.create("退出成功");
-
+    public CommonReturnType SessionTest(){
+        Subject subject=SecurityUtils.getSubject();
+        Session session=subject.getSession();
+        return CommonReturnType.create(session);
     }
+
+//    @RequestMapping("/logout")
+//    @ResponseBody
+//    public CommonReturnType logout(){
+//
+////        List<RightRole> r1=r1rolerManageService.selectByRoleId(SysUser.getCurrentUserRole());
+////        return CommonReturnType.create(r1);
+//        Subject subject = SecurityUtils.getSubject();
+//        subject.logout();
+//        return CommonReturnType.create("退出成功");
+//
+//    }
+@RequestMapping("/logout")
+@ResponseBody
+public CommonReturnType logout(HttpSession session){
+
+
+//    Subject subject = SecurityUtils.getSubject();
+//    subject.logout();
+    session.invalidate();
+    return CommonReturnType.create("退出成功");
+
+}
 
     @RequestMapping("/pleaseLogin")
     @ResponseBody

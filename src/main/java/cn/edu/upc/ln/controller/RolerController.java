@@ -1,5 +1,6 @@
 package cn.edu.upc.ln.controller;
 
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.ln.service.RolerManageService;
 import cn.edu.upc.manage.common.CommonReturnType;
 import cn.edu.upc.manage.model.*;
@@ -84,4 +85,6 @@ public class RolerController {
         List<RightRole> r1=rolerManageService.selectByRoleId(para.getId());
         return CommonReturnType.create(r1);
     }
+
+
 }

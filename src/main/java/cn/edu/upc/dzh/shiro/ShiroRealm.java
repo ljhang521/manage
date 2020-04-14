@@ -1,5 +1,7 @@
 package cn.edu.upc.dzh.shiro;
 
+import cn.edu.upc.dzh.until.exception.BusinessException;
+import cn.edu.upc.dzh.until.exception.EmBusinessError;
 import cn.edu.upc.manage.dao.UserMapper;
 import cn.edu.upc.manage.model.User;
 import org.apache.shiro.authc.*;
@@ -27,14 +29,9 @@ public class ShiroRealm extends AuthorizingRealm {
         String password = String.valueOf(usernamePasswordToken.getPassword());
         System.out.println(username+password);
         User user = userMapper.selectByUsername(username);
-//        if(user == null) {
-//            throw new AccountException("账号或密码错误");
-//        }
-//        if(!password.equals(user.getPassword())){
-//            throw new AccountException("账号或密码错误");
-//        }
+//
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
-                user, user.getPassword(), user.getRealName());
+                user, user.getPassword(), "userRealm");
         return simpleAuthenticationInfo;
     }
 
