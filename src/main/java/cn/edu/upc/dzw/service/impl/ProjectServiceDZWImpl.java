@@ -243,9 +243,11 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
         //删：userType不为0和1
 
         //之前没有数据
+
         if (groupUserMapper.selectByGroupId(groupUser).size() == 0) {
             //勾选
             if (groupUser.getUserType() == 0 || groupUser.getUserType() == 1) {
+
                 groupUserMapper.insertSelective(groupUser);
             } else {
                 //不勾选无操作
@@ -253,12 +255,13 @@ public class ProjectServiceDZWImpl implements ProjectServiceDZW {
         } else {//之前有数据
             //勾选
             if (groupUser.getUserType() == 0 || groupUser.getUserType() == 1) {
-                groupUser.setDelFlag(0);
+                groupUserMapper.updateByPrimaryKeySelective(groupUser);
             } else {//取消勾选
-                groupUser.setDelFlag(groupUser.getId() == null ? 1 : groupUser.getId());
+                groupUserMapper.deleteByPrimaryKey(groupUser.getId());
+              //  groupUser.setDelFlag(groupUser.getId() == null ? 1 : groupUser.getId());
             }
 
-            groupUserMapper.updateByPrimaryKeySelective(groupUser);
+
         }
     }
 }

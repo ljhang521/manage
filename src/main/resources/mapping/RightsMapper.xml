@@ -225,8 +225,12 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
 
+
+
+
   <select id="selectRightByRole" resultMap="RightsSetMap">
     select * from view_rights where id in(
-select right_id from right_role where role_id=#{roleId}) and (del_flag = 0 and id!=0)
+    select right_id from right_role where role_id=#{roleId}) and (del_flag = 0 and id!=0)
+
   </select>
 </mapper>

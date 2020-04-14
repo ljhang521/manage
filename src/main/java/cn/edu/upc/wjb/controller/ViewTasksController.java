@@ -10,19 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 
 @CrossOrigin
 @Controller
-@RequestMapping(value = "/project",method = {RequestMethod.POST})
+
+@RequestMapping(value="/project",method = {RequestMethod.POST,RequestMethod.GET})
+
 public class ViewTasksController {
     @Autowired
     ViewTasksService viewTasksService;
 
     @RequestMapping("/getProjectEmployeeRoleList")
     @ResponseBody
-    public CommonReturnType getTasksList(){
+    public CommonReturnType getTasksList(HttpSession session){
 
-        return CommonReturnType.create(viewTasksService.getTasksList());
+        return CommonReturnType.create(viewTasksService.getTasksList(session));
 
     }
 }

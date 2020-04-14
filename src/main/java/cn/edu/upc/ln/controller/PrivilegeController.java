@@ -56,6 +56,7 @@ public class PrivilegeController {
 
     @RequestMapping("/selectRightByRole")
     @ResponseBody
+
     public CommonReturnType selectRightByRole(HttpSession session){
         List<RightsSetLN> p1 = priManageService.selectRightByRole(SysUser.getCurrentUserRole(session));
         return CommonReturnType.create(p1);

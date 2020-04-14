@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +36,8 @@ public class ProjectController {
     }
     @RequestMapping("/getProjectByManagerId")
     @ResponseBody
-    public CommonReturnType getProjectList() {
-        List<Project> p=projectService.selectByManager();
+    public CommonReturnType getProjectList(HttpSession session) {
+        List<Project> p=projectService.selectByManager(session);
         return CommonReturnType.create(p);
     }
 

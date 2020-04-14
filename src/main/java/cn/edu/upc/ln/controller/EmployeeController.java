@@ -1,5 +1,6 @@
 package cn.edu.upc.ln.controller;
 
+import cn.edu.upc.dzh.until.MD5Util;
 import cn.edu.upc.ljh.service.UserService;
 import cn.edu.upc.ln.service.EmployeeManageService;
 import cn.edu.upc.manage.common.CommonReturnType;
@@ -50,7 +51,8 @@ public class EmployeeController {
     @ResponseBody
     public CommonReturnType changePassWord(@RequestBody ChangePassword para)
     {
-        employeeManageService.changePassWord(para.getPassword(),para.getId());
+        String password= MD5Util.md5(para.getPassword());
+        employeeManageService.changePassWord(password,para.getId());
         return CommonReturnType.create(null,null,0,"修改成功");
     }
 

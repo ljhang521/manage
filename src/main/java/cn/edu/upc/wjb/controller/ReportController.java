@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = "/projectReport",method = RequestMethod.POST)
+@RequestMapping(value = "/projectReport",method ={RequestMethod.POST,RequestMethod.GET})
 @CrossOrigin(allowCredentials = "true",allowedHeaders = "*")
 public class ReportController {
     @Autowired
@@ -16,14 +16,14 @@ public class ReportController {
 
     @RequestMapping("/getProjectReportList")
     @ResponseBody
-    public CommonReturnType select(@RequestParam(value = "pid") int pid, @RequestParam(value = "gid") int gid, @RequestParam(value = "eid") int eid){
-        return CommonReturnType.create(reportService.getListByParam(pid,gid,eid));
+    public CommonReturnType select(@RequestBody Report report){
+        return CommonReturnType.create(reportService.getListByParam(report.getProjectId(),report.getGroupId(),report.getEmployeeId()));
     }
-    @RequestMapping("/getProjectReportChickList")
-    @ResponseBody
-    public CommonReturnType checkSelect(@RequestParam(value = "pid") int pid, @RequestParam(value = "gid") int gid, @RequestParam(value = "eid") int eid){
-        return CommonReturnType.create(reportService.getListByParam(pid,gid,eid));
-    }
+//    @RequestMapping("/getProjectReportChickList")
+//    @ResponseBody
+//    public CommonReturnType checkSelect(@RequestParam(value = "pid") int pid, @RequestParam(value = "gid") int gid, @RequestParam(value = "eid") int eid){
+//        return CommonReturnType.create(reportService.getListByParam(pid,gid,eid));
+//    }
 
     @RequestMapping("/insertProjectReportList")
     @ResponseBody

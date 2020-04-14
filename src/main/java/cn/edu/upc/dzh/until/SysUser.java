@@ -6,9 +6,10 @@ import org.apache.shiro.SecurityUtils;
 import javax.servlet.http.HttpSession;
 
 public class SysUser {
-    public static Integer getCurrentUserId(){
-        System.out.println(SecurityUtils.getSubject().getPrincipal());
-        User user = (User) SecurityUtils.getSubject().getPrincipal();
+    public static Integer getCurrentUserId(HttpSession session){
+//        System.out.println(SecurityUtils.getSubject().getPrincipal());
+//        User user = (User) SecurityUtils.getSubject().getPrincipal();
+        User user=(User) session.getAttribute("user");
         return user.getId();
     }
     public static Integer getCurrentUserRole(HttpSession session){

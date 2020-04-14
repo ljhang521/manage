@@ -27,6 +27,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 相关表的配置 -->
+
         <!--<table tableName="view_message_state" enableCountByExample="false" enableDeleteByExample="false"-->
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="project" enableCountByExample="false" enableDeleteByExample="false"-->
@@ -47,7 +48,7 @@
                <!--enableSelectByExample="false" enableUpdateByExample="false"/>-->
         <!--<table tableName="role" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
                <!--enableUpdateByExample="false"/>-->
-<!--        <table tableName="technology" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
-<!--               enableUpdateByExample="false"/>-->
+        <!--<table tableName="rights" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--enableUpdateByExample="false"/>-->
     </context>
 </generatorConfiguration>

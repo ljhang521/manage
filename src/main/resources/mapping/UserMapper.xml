@@ -274,7 +274,7 @@
 <!--  董志涵-->
 
   <select id="selectByUsername" resultMap="BaseResultMap">
-    select * from user where user_name='${username}'
+    select * from user where user_name='${username}' and del_flag = 0
   </select>
 
   <update id="changePasswordByEmail" >

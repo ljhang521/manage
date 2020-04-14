@@ -1,10 +1,7 @@
 package cn.edu.upc.xjs.controller;
 
 import cn.edu.upc.manage.common.CommonReturnType;
-import cn.edu.upc.manage.model.GroupEx;
-import cn.edu.upc.manage.model.GroupUser;
-import cn.edu.upc.manage.model.Progress;
-import cn.edu.upc.manage.model.ViewGroupUser;
+import cn.edu.upc.manage.model.*;
 import cn.edu.upc.xjs.service.GroupExServiceXJS;
 import cn.edu.upc.xjs.service.ProgressServiceXJS;
 import cn.edu.upc.xjs.service.ProjectServiceXJS;
@@ -37,19 +34,32 @@ public class GroupExControllerXJS {
         List<GroupEx> list = groupExServiceXJS.selectGroupEx();
         return CommonReturnType.create(list);
     }
+    @RequestMapping("/getGroupInfo")
+    @ResponseBody
+    public CommonReturnType getGroupList(@RequestBody GroupEx group) {
+        List<GroupEx> list = groupExServiceXJS.getGroup(group.getProjectId());
+        return CommonReturnType.create(list);
+    }
 
     @RequestMapping("/deleteGroup")
     @ResponseBody
     public CommonReturnType deleter(@RequestBody  GroupEx group) {
         groupExServiceXJS.deleteGroupEx(group);
-        List<ViewGroupUser> l = projectServiceXJS.getGroupUser(group.getProjectId());
-        return CommonReturnType.create(l,"删除成功");
+        List<GroupEx> list = groupExServiceXJS.getGroup(group.getProjectId());
+        return CommonReturnType.create(list,"删除成功");
     }
     @RequestMapping("/deleteGroupUser")
     @ResponseBody
     public CommonReturnType deleteGroup(@RequestBody GroupUser groupUser) {
         groupExServiceXJS.deleteGroupUser(groupUser);
         List<ViewGroupUser> list = projectServiceXJS.getGroupUser(groupUser.getUserId());
+        return CommonReturnType.create(list);
+    }
+    @RequestMapping("/getGroupUsers")
+    @ResponseBody
+    public CommonReturnType getGroupUsers(@RequestBody ViewGroupUser2 record) {
+
+        List<ViewGroupUser2> list = groupExServiceXJS.getGroupUsers(record);
         return CommonReturnType.create(list);
     }
 

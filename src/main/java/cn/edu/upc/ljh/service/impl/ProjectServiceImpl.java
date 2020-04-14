@@ -1,11 +1,13 @@
 package cn.edu.upc.ljh.service.impl;
 
+import cn.edu.upc.dzh.until.SysUser;
 import cn.edu.upc.manage.dao.ProjectMapper;
 import cn.edu.upc.manage.model.Project;
 import cn.edu.upc.ljh.service.ProjectService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service("projectService")
@@ -18,9 +20,11 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public List<Project> selectByManager() {
-        int managerId=2; //session获取
-        return projectMapper.selectByManager(managerId);
+    public List<Project> selectByManager(HttpSession session) {
+        //int managerId=2; //session获取
+        Integer loginId = SysUser.getCurrentUserId(session);
+        System.out.println(loginId);
+        return projectMapper.selectByManager(loginId);
     }
 
     @Override
