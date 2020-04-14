@@ -7,44 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e1d484d-fd26-4233-8bd1-4c497f026527" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/ViewGroupUser2Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ViewGroupUser2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ViewGroupUser2Example.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/controller/UploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ViewGroupUser2Mapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzh/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzh/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzh/until/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzh/until/SysUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzw/service/impl/ProjectServiceDZWImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/dzw/service/impl/ProjectServiceDZWImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/ProgressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/ProgressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/service/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ljh/service/impl/ProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/controller/PrivilegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/controller/PrivilegeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/service/impl/PriManageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/ln/service/impl/PriManageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/GroupExMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/GroupExMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/RightsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/RightsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/ViewTasksMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/dao/ViewTasksMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ViewTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/manage/model/ViewTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/controller/ViewTasksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/controller/ViewTasksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/service/ViewTasksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/service/ViewTasksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/service/impl/ViewTasksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/wjb/service/impl/ViewTasksServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/controller/GroupExControllerXJS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/controller/GroupExControllerXJS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/controller/ProjectControllerXJS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/controller/ProjectControllerXJS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/GroupExServiceXJS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/GroupExServiceXJS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/ProjectServiceXJS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/ProjectServiceXJS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/impl/GroupExServiceXJSImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/impl/GroupExServiceXJSImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/impl/ProjectServiceXJSImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/edu/upc/xjs/service/impl/ProjectServiceXJSImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/GroupExMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/GroupExMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/RightsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/RightsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ViewGroupUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ViewGroupUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapping/ViewTasksMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapping/ViewTasksMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-generator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586825045332</updated>
-      <workItem from="1586825046928" duration="5725000" />
+      <workItem from="1586825046928" duration="6643000" />
     </task>
     <servers />
   </component>
@@ -189,54 +152,54 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="184" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1586827665775" />
-    <state width="958" height="235" key="GridCell.Tab.0.bottom" timestamp="1586830035938">
+    <state width="958" height="216" key="GridCell.Tab.0.bottom" timestamp="1586834170622">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586830035938" />
-    <state width="958" height="235" key="GridCell.Tab.0.center" timestamp="1586830035930">
+    <state width="958" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586834170622" />
+    <state width="958" height="216" key="GridCell.Tab.0.center" timestamp="1586834170620">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586830035930" />
-    <state width="958" height="235" key="GridCell.Tab.0.left" timestamp="1586830035926">
+    <state width="958" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1586834170620" />
+    <state width="958" height="216" key="GridCell.Tab.0.left" timestamp="1586834170619">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586830035926" />
-    <state width="958" height="235" key="GridCell.Tab.0.right" timestamp="1586830035933">
+    <state width="958" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1586834170619" />
+    <state width="958" height="216" key="GridCell.Tab.0.right" timestamp="1586834170621">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586830035933" />
-    <state width="958" height="235" key="GridCell.Tab.1.bottom" timestamp="1586830035493">
+    <state width="958" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1586834170621" />
+    <state width="958" height="216" key="GridCell.Tab.1.bottom" timestamp="1586834170630">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586830035493" />
-    <state width="958" height="235" key="GridCell.Tab.1.center" timestamp="1586830035491">
+    <state width="958" height="216" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586834170630" />
+    <state width="958" height="216" key="GridCell.Tab.1.center" timestamp="1586834170629">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1586830035491" />
-    <state width="958" height="235" key="GridCell.Tab.1.left" timestamp="1586830035490">
+    <state width="958" height="216" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1586834170629" />
+    <state width="958" height="216" key="GridCell.Tab.1.left" timestamp="1586834170628">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1586830035490" />
-    <state width="958" height="235" key="GridCell.Tab.1.right" timestamp="1586830035492">
+    <state width="958" height="216" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1586834170628" />
+    <state width="958" height="216" key="GridCell.Tab.1.right" timestamp="1586834170629">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1586830035492" />
-    <state width="958" height="235" key="GridCell.Tab.2.bottom" timestamp="1586830035489">
+    <state width="958" height="216" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1586834170629" />
+    <state width="958" height="216" key="GridCell.Tab.2.bottom" timestamp="1586834170627">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586830035489" />
-    <state width="958" height="235" key="GridCell.Tab.2.center" timestamp="1586830035488">
+    <state width="958" height="216" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1586834170627" />
+    <state width="958" height="216" key="GridCell.Tab.2.center" timestamp="1586834170624">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1586830035488" />
-    <state width="958" height="235" key="GridCell.Tab.2.left" timestamp="1586830035487">
+    <state width="958" height="216" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1586834170624" />
+    <state width="958" height="216" key="GridCell.Tab.2.left" timestamp="1586834170623">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1586830035487" />
-    <state width="958" height="235" key="GridCell.Tab.2.right" timestamp="1586830035489">
+    <state width="958" height="216" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1586834170623" />
+    <state width="958" height="216" key="GridCell.Tab.2.right" timestamp="1586834170625">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="958" height="235" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1586830035489" />
+    <state width="958" height="216" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1586834170625" />
     <state x="84" y="156" width="1240" height="613" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586825651178">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
