@@ -74,5 +74,10 @@ public interface UserMapper {
      * @return 从user表里根据role值 查出 项目经理manager
      */
     List<User> selectManagerByRole();
-
+    /*
+    * hyz
+    * 从user表里查出userliebiao
+    *
+    */
+    List<User> getUserList();
 }

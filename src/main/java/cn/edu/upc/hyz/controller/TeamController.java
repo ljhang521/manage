@@ -83,6 +83,8 @@ public class TeamController {
             int technologyId = Integer.parseInt(technology.get("technologyId").toString());
             List<LinkedHashMap<String,Object>> technologySecondData ;
             technologySecondData = teamStructureListService.selectTeamStructureListTechnologySecond(technologyId);
+            int technologySecondNum = technologySecondData.size();
+
             for(Map<String,Object> lm:technologySecondData){
                 Object value = lm.get("technologyIdSecond");
                 //System.out.println(value);
@@ -105,18 +107,20 @@ public class TeamController {
                 * 2--groupMember组员（有数个）
                 * */
                 int groupMember  = 1 ;
-                int flag = 0 ;
+                int groupLeaderMenber = 0;
                 for(LinkedHashMap<String,Object> user:users){
                     System.out.println(user);
                     int  fieldPosition = Integer.parseInt(user.get("field_position").toString());
                     if(fieldPosition == 1){
-                        lm.put("manager",user.get("real_name"));
+                        lm.put("manager","负责人：\n"+user.get("real_name"));
                     }
                     else if(fieldPosition == 2){
-                        if(flag++ == 0)
-                            groupLeader = groupLeader  + user.get("real_name").toString() ;
-                        else
+                        if(groupLeaderMenber++ == 0)
+                            groupLeader ="组长：\n" + groupLeader  + user.get("real_name").toString() ;
+                        else{
                             groupLeader = groupLeader + "\n" + user.get("real_name").toString() ;
+                            groupLeaderMenber ++ ;
+                        }
 
                     }
                     else if(fieldPosition == 3) {
@@ -125,10 +129,13 @@ public class TeamController {
                 }
 
                 lm.put("groupLeader", groupLeader);
+                lm.put("groupLeaderMenber", groupLeaderMenber);
                 groupList.add(groupMembers);
                 lm.put("groupList",groupList);
             }
+            technology.put("technologySecondNum",technologySecondNum);
             technology.put("technologySecond",technologySecondData);
+
         }
         //连接并处理technology和user
 
@@ -278,19 +285,32 @@ public class TeamController {
                 LinkedHashMap<String,Object> groupLeader = new  LinkedHashMap<String,Object>();
                 List<Object> groupLeaders = new ArrayList<Object>();
                 groupLeader.put("name",data3.get("groupLeader").toString());
+                List<Object> GL_SymbolSize =new ArrayList<Object>() ;
+                int GL_SymbolSizeWidth = 80 ;
+                int GL_SymbolSizeHeight = 45 +
+                       15 * Integer.parseInt(data3.get("groupLeaderMenber").toString());
+                GL_SymbolSize.add(GL_SymbolSizeWidth);
+                GL_SymbolSize.add(GL_SymbolSizeHeight);
+                groupLeader.put("symbolSize",GL_SymbolSize);
                 //group和User层
-                //对一长窜的user进行跟踪
-                List<Object> user = groupLeaders ;
                 int flag = 0;
                 List<LinkedHashMap<String, Object>> groupList = (List<LinkedHashMap<String, Object>>) data3.get("groupList");
                 for(LinkedHashMap<String,Object> groupl:groupList){
-                        for(String key : groupl.keySet()){
-                            LinkedHashMap<String,Object> userNode = new  LinkedHashMap<String,Object>();
-                            userNode.put("name",groupl.get(key).toString());
-                            user.add(userNode);
-                            user = new ArrayList<Object>();
-                            userNode.put("children",user);
+                    Map<String,Object> groupMenbers = new LinkedHashMap<String, Object>() ;
+                    List<Object> GM_SymbolSize =new ArrayList<Object>() ;
+                    int GM_SymbolSizeWidth = 80 ;
+                    int GM_SymbolSizeHeight = 45 +
+                            15 * groupl.size();
+                    GM_SymbolSize.add(GM_SymbolSizeWidth);
+                    GM_SymbolSize.add(GM_SymbolSizeHeight);
+                    String groupMenberNmaes = "\n";
+                    for(String key : groupl.keySet()){
+                        groupMenberNmaes = groupMenberNmaes +
+                                groupl.get(key).toString() + "\n";
                     }
+                    groupMenbers.put("name",groupMenberNmaes);
+                    groupMenbers.put("symbolSize",GM_SymbolSize);
+                    groupLeaders.add(groupMenbers);
                 }
                 groupLeader.put("children",groupLeaders);
                 managers.add(groupLeader);
