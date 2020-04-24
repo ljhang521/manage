@@ -56,7 +56,7 @@ public interface UserMapper {
      */
     int updateByPrimaryKey(User record);
     List<EmployeeSelect> selectAll();
-    EmployeeSelect selectByName(EmployeeSelectInput employeeSelectInput);
+    List<EmployeeSelect> selectByName(EmployeeSelectInput employeeSelectInput);
 
     //董志涵
     public User selectByUsername(@Param("username") String username);

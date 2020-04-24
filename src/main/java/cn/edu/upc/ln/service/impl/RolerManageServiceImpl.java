@@ -3,7 +3,6 @@ package cn.edu.upc.ln.service.impl;
 import cn.edu.upc.ln.service.RolerManageService;
 import cn.edu.upc.manage.dao.RightRoleMapper;
 import cn.edu.upc.manage.dao.RoleMapper;
-import cn.edu.upc.manage.dao.RolerManageMapper;
 import cn.edu.upc.manage.dao.ViewRightsRoleMapper;
 import cn.edu.upc.manage.model.*;
 import org.springframework.stereotype.Service;

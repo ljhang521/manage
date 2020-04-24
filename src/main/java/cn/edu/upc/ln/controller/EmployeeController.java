@@ -28,7 +28,7 @@ public class EmployeeController {
     @RequestMapping("/search")
     @ResponseBody
     public CommonReturnType searchEmployee(@RequestBody EmployeeSelectInput employeeSelectInput){
-        EmployeeSelect e2 = employeeManageService.selectEmployee(employeeSelectInput);
+        List<EmployeeSelect> e2 = employeeManageService.selectEmployee(employeeSelectInput);
         return CommonReturnType.create(e2);
     }
     @RequestMapping("/deleteUser")

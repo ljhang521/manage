@@ -274,7 +274,13 @@
     select
     *
     from view_user
-    where (real_name like CONCAT('%',#{input,jdbcType=VARCHAR},'%') and fieldPosition=#{fieldPosition,jdbcType=INTEGER})
+    where
+    <if test="input!=null">
+    real_name like CONCAT('%',#{input,jdbcType=VARCHAR},'%')
+    </if>
+    <if test="technology!=0">
+     and technology=#{technology,jdbcType=INTEGER}
+    </if>
   </select>
 
 <!--  董志涵-->
